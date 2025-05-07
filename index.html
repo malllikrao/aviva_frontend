@@ -282,7 +282,7 @@
     <p><strong>Phone:</strong> +91 8125251010</p>
     <p><small>9am - 6pm</small></p>
     <p><strong>Email:</strong> info@aviva-aesthetics.com</p>
-    <p><small>We’ll respond within 24 hours</small></p>
+    <p><small>We’ll respond within 4-5 hours</small></p>
     <p><strong>Location:</strong> Court Chowrata, Biba showroom, Karimnagar</p>
     <p><small>Convenient parking available</small></p>
     <p>
@@ -301,36 +301,44 @@
 <!-- linking frontendwith backend for testing -->
 
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       const appointmentForm = document.getElementById('appointmentForm');
-      console.log('Appointment form selected:', appointmentForm); // Check if the form is found
-    
-      if (appointmentForm) { // Only add the listener if the form exists
-        appointmentForm.addEventListener('submit', function(event) {
-          console.log('Form submitted!'); // Check if the submit event is triggered
-          event.preventDefault();
-    
-          const formData = {
-            full_name: this.querySelector('input[name="name"]').value,
-            email: this.querySelector('input[name="email"]').value,
-            phone: this.querySelector('input[name="phone"]').value,
-            service: this.querySelector('select[name="service"]').value,
-            date: this.querySelector('input[name="date"]').value,
-            time: this.querySelector('input[name="time"]').value,
-            message: this.querySelector('textarea[name="message"]').value
-          };
-          console.log('Form data:', formData); // Check the collected data
-    
-          fetch('/book/', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-              'X-CSRFToken': getCookie('csrftoken')
-            },
-            body: JSON.stringify(formData)
-          })
+      console.log('Appointment form selected:', appointmentForm); // Debug log
+
+    // Set CSRF cookie by hitting Django once (important for separate front & backend)
+      fetch("http://127.0.0.1:8000/get-csrf-token/", {
+        credentials: "include"
+      })
+        .then(() => console.log("CSRF cookie set"))
+        .catch(err => console.error("Failed to set CSRF cookie:", err));
+
+      if (appointmentForm) {
+        appointmentForm.addEventListener('submit', function (event) {
+        console.log('Form submitted!');
+        event.preventDefault();
+
+        const formData = {
+          name: this.querySelector('input[name="name"]').value,
+          email: this.querySelector('input[name="email"]').value,
+          phone: this.querySelector('input[name="phone"]').value,
+          service: this.querySelector('select[name="service"]').value,
+          date: this.querySelector('input[name="date"]').value,
+          time: this.querySelector('input[name="time"]').value,
+          message: this.querySelector('textarea[name="message"]').value
+        };
+        console.log('Form data:', formData);
+
+        fetch('http://127.0.0.1:8000/book/', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'X-CSRFToken': getCookie('csrftoken') // CSRF token from cookie
+          },
+          credentials: 'include', // Required for CSRF cookies
+          body: JSON.stringify(formData)
+        })
           .then(response => {
-            console.log('Response received:', response); // Check if a response is received
+            console.log('Response received:', response);
             if (!response.ok) {
               return response.json().then(data => {
                 throw new Error(data.error || 'Something went wrong!');
@@ -348,7 +356,7 @@
             alert('Failed to send appointment request. Please try again.');
           });
         });
-    
+
         function getCookie(name) {
           let cookieValue = null;
           if (document.cookie && document.cookie !== '') {
@@ -364,30 +372,32 @@
           return cookieValue;
         }
       } else {
-        console.error('Appointment form not found!'); // Log an error if the form isn't found
+        console.error('Appointment form not found!');
       }
     });
-    </script>
+  </script>
 
   <!-- Right: Book Your Appointment -->
   <div class="appointment-box">
-    <h3>Book Your Appointment</h3>
-    <form id="appointmentForm">
-      <input type="text" placeholder="Full Name" name="name" required>
-      <input type="email" placeholder="Email Address" name="email" required>
-      <input type="tel" placeholder="Phone Number" name="phone" required>
-      <select name="service" required>
-        <option value="">Select a service</option>
-        <option>Skin Consultation</option>
-        <option>Laser Treatment</option>
-        <option>Hair Therapy</option>
-        <option>Dental Services</option>
-      </select>
-      <input type="date" name="date" required> <input type="time" name="time" required>
-      <textarea rows="4" placeholder="Please share any specific concerns or questions you have" name="message"></textarea>
-      <button type="submit">Request Appointment</button>
-    </form>
-  </div>
+  <h3>Book Your Appointment</h3>
+  <form id="appointmentForm" action="http://127.0.0.1:8000/book/" method="POST">
+    <input type="text" placeholder="Full Name" name="name" required>
+    <input type="email" placeholder="Email Address" name="email" required>
+    <input type="tel" placeholder="Phone Number" name="phone" required>
+    <select name="service" required>
+      <option value="">Select a service</option>
+      <option>Skin Consultation</option>
+      <option>Laser Treatment</option>
+      <option>Hair Therapy</option>
+      <option>Dental Services</option>
+    </select>
+    <input type="date" name="date" required>
+    <input type="time" name="time" required>
+    <textarea rows="4" placeholder="Please share any specific concerns or questions you have" name="message"></textarea>
+    <button type="submit">Request Appointment</button>
+  </form>
+</div>
+
 </section>
 
 <!-- Smooth Scroll Script -->
@@ -500,7 +510,7 @@ document.getElementById('home-link').addEventListener('click', function(e) {
 </a>
 
 
-
+<script src="assets/js/script.js"></script>
 </body>
 </html>
 
