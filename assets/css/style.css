@@ -102,7 +102,7 @@
   }
 
   .about-image {
-    margin-top: 10px; /* Moves image slightly lower */
+    margin-top: 30px; /* Moves image slightly lower */
   }
   
   .about-image img {
@@ -827,4 +827,355 @@ footer .footer-links a:hover {
   cursor: pointer;
 }
 
+/* services top down css */
+/* ... other navigation styles ... */
 
+/* Footer Dropdown Styles */
+.dropdown-footer {
+  position: relative;
+}
+
+.dropdown-content-footer {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 220px; /* Adjust width as needed */
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 2; /* Ensure it's above other footer content */
+  left: 0; /* Align to the left */
+}
+
+.dropdown-content-footer a {
+  color: black !important; /* Override inline style */
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-content-footer a:hover {
+  background-color: #ddd;
+}
+
+.dropdown-footer:hover .dropdown-content-footer {
+  display: block;
+}
+
+/* every treatment in plastic surgey images  */
+
+/* Global Styles (These might be in your style.css, but included here for completeness) */
+
+
+.service-detail-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+footer {
+  background-color: #f8f8f8;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 30px;
+  border-top: 1px solid #eee;
+}
+
+/*-----------------------------------------------------------------------------------*/
+/* Specific Styles for cosmetic-plastic-surgery.html */
+/*-----------------------------------------------------------------------------------*/
+
+/* Basic centering for the main heading */
+.main-heading {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2rem;
+  color: #7a5a28;
+}
+
+/* Style for the "About Dr." section */
+.about-doctor {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  max-width: 1000px;
+  margin: 20px auto 30px;
+  padding: 20px;
+  flex-direction: row;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+}
+
+.about-doctor .doctor-image {
+  flex-basis: 30%;
+  text-align: center;
+}
+
+.about-doctor .doctor-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about-doctor .doctor-info {
+  flex-basis: 70%;
+}
+
+.about-doctor .doctor-info h2 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.about-doctor .doctor-info p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #444;
+  margin-bottom: 1rem;
+}
+
+/* Style for the two-column "Our Services Overview" section */
+.our-services-overview {
+  display: flex;
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 20px;
+  gap: 30px;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+}
+
+.service-categories {
+  flex-basis: 30%;
+  height: 300px;
+  overflow-y: auto;
+}
+
+.service-categories h3 {
+  font-size: 1.5rem;
+  color: #7a5a28;
+  margin-bottom: 15px;
+  padding-right: 10px;
+}
+
+.category-list {
+  list-style: none;
+  padding: 0;
+  padding-right: 10px;
+}
+
+.category-list li {
+  margin-bottom: 10px;
+}
+
+.category-list li a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #333;
+  text-decoration: none;
+  padding: 8px 15px;
+  border-bottom: 1px solid #eee;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border-left: 3px solid transparent;
+}
+
+.category-list li a:hover {
+  background-color: #f3e9da;
+  color: #5a3e2b;
+}
+
+.category-list li a:last-child {
+  border-bottom: none;
+}
+
+.category-list li a .arrow {
+  color: #c5a880;
+  font-size: 1.2rem;
+}
+
+.category-list li.active a {
+  font-weight: bold;
+  color: #fff;
+  background-color: #c5a880;
+  border-left: 3px solid #7a5a28;
+}
+
+.treatment-details {
+  flex-basis: 70%;
+}
+
+.treatment-details h4 {
+  font-size: 1.5rem;
+  color: #7a5a28;
+  margin-bottom: 15px;
+}
+
+.treatment-list-right {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.treatment-list-right li a {
+  display: block;
+  color: #444;
+  text-decoration: none;
+  padding: 8px 10px;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.treatment-list-right li a:hover {
+  background-color: #e9dbc4;
+  color: #5a3e2b;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Plastic Surgery Before & After Section */
+.plastic-surgery-before-after {
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+}
+
+.plastic-surgery-before-after h2 {
+  font-size: 1.8rem;
+  color: #7a5a28;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.treatment-before-after {
+  margin-bottom: 25px;
+  padding: 15px;
+  border: 1px solid #eee;
+  border-radius: 5px;
+}
+
+.treatment-before-after h3 {
+  font-size: 1.3rem;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.before-after-images {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.before-after-images .before,
+.before-after-images .after {
+  flex: 1;
+  text-align: center;
+}
+
+.before-after-images img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 5px;
+}
+
+.before-after-images span {
+  display: block;
+  color: #777;
+  font-size: 0.9rem;
+}
+
+/* Other Services Links Section */
+.other-services-links {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+.other-services-links h2 {
+  font-size: 1.5rem;
+  color: #7a5a28;
+  margin-bottom: 15px;
+}
+
+.other-services-links ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.other-services-links ul li a {
+  color: #444;
+  text-decoration: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.other-services-links ul li a:hover {
+  background-color: #e9dbc4;
+  color: #5a3e2b;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Page Navigation */
+.page-navigation {
+  margin-top: 30px;
+  padding: 0 20px;
+}
+
+.navigation-links {
+  display: flex;
+  justify-content: flex-end; /* Push the link to the right */
+}
+
+.next-page {
+  display: flex;
+  align-items: center;
+  background-color: #f8f8f8;
+  padding: 15px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #333;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border: 1px solid #eee;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.next-page:hover {
+  background-color: #e9dbc4;
+  color: #5a3e2b;
+  border-color: #c5a880;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.next-page img {
+  width: 80px;
+  height: 60px;
+  margin-right: 15px;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+.next-page span {
+  font-size: 1.1rem;
+  font-weight: bold;
+}

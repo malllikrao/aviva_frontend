@@ -1,385 +1,398 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aviva Aesthetics</title>
-  <link rel="stylesheet" href="assets/css/style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aviva Aesthetics</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <style> /* Basic dropdown styling - enhance this in your style.css */
+        .dropdown {
+            position: relative;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #ffffff;
+            min-width: 220px; /* Adjust width as needed */
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content a:hover {background-color: #ddd;}
+        .dropdown:hover .dropdown-content {display: block;}
+    </style>
 </head>
-
-
 <body>
 
-  <!-- Navigation -->
-  <header>
-    <div class="nav-container">
-        <img src="assets/images/logo.png" alt="Aviva Aesthetics Logo" class="logo-img" />
-      <nav>
-        <ul class="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#vouchers">Vouchers</a></li>
-          <li><a href="#contact">Appointment</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <!-- Hero Section: Background + Bottom Aligned Content -->
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Reveal Your Natural Glow</h1>
-      <p>Hair, Skin, Laser & Dental Treatments by Dr. Haripriya</p>
-      <a href="#contact" class="hero-btn">Book Appointment Now</a>
-    </div>
-  </section>
-
- <!-- About dr haripriya section -->
- <section id="about" class="about-section">
-    <div class="about-container">
-      <div class="about-image">
-        <img src="assets/images/about-drharipriya.jpg" alt="Dr. Haripriya" />
-      </div>
-      <div class="about-content">
-        <h2>About <span>Dr. Haripriya</span></h2>
-        <p class="subtitle">Experienced medical professional specializing in advanced aesthetic treatments</p>
-        <h3>Welcome to Aviva Aesthetics</h3>
-        <p>
-          Dr. Haripriya is a highly qualified aesthetics specialist with extensive experience in advanced cosmetic procedures and skin treatments. Her expertise combines medical knowledge with an artistic eye to deliver natural-looking results that enhance your unique features.
-        </p>
-        <p>
-          At Aviva Aesthetics, our approach is based on personalized care, cutting-edge technology, and evidence-based treatments. We believe that true beauty comes from a holistic approach to wellness that considers your individual needs and goals.
-        </p>
-        <div class="about-stats">
-          <div class="stat-card"><strong>500+</strong><br />Happy Clients</div>
-          <div class="stat-card"><strong>25+</strong><br />Treatments</div>
-          <div class="stat-card"><strong>5+</strong><br />Years Experience</div>
+    <header>
+        <div class="nav-container">
+            <img src="assets/images/logo.png" alt="Aviva Aesthetics Logo" class="logo-img" />
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#exclusives">Exclusives</a></li>
+                    <li class="dropdown">
+                        <a href="#">Services</a>
+                        <div class="dropdown-content">
+                            <a href="plastic-surgery.html">Plastic & Cosmetic Surgery</a>
+                            <a href="dermatology.html">Dermatology</a>
+                            <a href="skinandhairaesthetics.html">Skin & Hair Aesthetics</a>
+                            <a href="smile.html">Smile Clinic (Dental)</a>
+                            <a href="obesity-clinic.html">Obesity Clinic (Weight Loss)</a>
+                            <a href="cosmetic-gynecology.html">Cosmetic Gynecology</a>
+                        </div>
+                    </li>
+                    <li><a href="#vouchers">Vouchers</a></li>
+                    <li><a href="#contact">Appointment</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#team-section">Our Team</a></li>
+                </ul>
+            </nav>
         </div>
-      </div>
-    </div>
-  </section>
-  <!-- About services offered section -->
-  <section id="services" class="services-section">
-    <h2 class="section-title">Our Expertise</h2>
-    <p class="section-subtitle">
-      Specialized in hair transplantation, hair loss treatments, skin treatments, laser procedures, and smile enhancement.
-    </p>
-  
-    <div class="service-grid">
-      <div class="service-card">
-        <a href="hair.html">
-          <img src="assets/images/service-hair.jpg" alt="Hair Transplantation">
-          <div class="service-content">
-            <h3>Hair Transplantation</h3>
-            <p>Advanced FUE, FUT, PRP, and GFC hair loss treatments performed by experienced professionals for natural results.</p>
-            <span class="learn-more">Learn More →</span>
-          </div>
-        </a>
-      </div>
-  
-      <div class="service-card">
-        <a href="skin.html">
-          <img src="assets/images/service-skin.jpg" alt="Skin Treatments">
-          <div class="service-content">
-            <h3>Skin Treatments</h3>
-            <p>Facials, chemical peels, dermabrasion & medical-grade solutions for glowing, healthy skin.</p>
-            <span class="learn-more">Learn More →</span>
-          </div>
-        </a>
-      </div>
-  
-      <div class="service-card">
-        <a href="laser.html">
-          <img src="assets/images/service-laser.jpg" alt="Laser Procedures">
-          <div class="service-content">
-            <h3>Laser Procedures</h3>
-            <p>Hair removal, pigmentation correction, and advanced rejuvenation techniques with state-of-the-art lasers.</p>
-            <span class="learn-more">Learn More →</span>
-          </div>
-        </a>
-      </div>
-  
-      <div class="service-card">
-        <a href="smile.html">
-          <img src="assets/images/service-smile.jpg" alt="Smile Enhancement">
-          <div class="service-content">
-            <h3>Smile Enhancement</h3>
-            <p>Cosmetic dental procedures including teeth whitening, veneers, and gum reshaping for a confident smile.</p>
-            <span class="learn-more">Learn More →</span>
-          </div>
-        </a>
-      </div>
-    </div>
-  </section>
+    </header>
 
-  <!-- EXCLUSIVE TREATMENTS -->
-  <section id="vouchers" class="exclusive-section">
-  <h2>🎁 Exclusive Treatment Vouchers</h2>
-  <p class="section-subtext">Experience premium dermatology and cosmetic treatments by Dr. Haripriya and our team of specialists.</p>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Reveal Your Natural Glow</h1>
+            <p>Hair, Skin, Laser & Dental Treatments by Dr. Haripriya</p>
+            <a href="#contact" class="hero-btn">Book Appointment Now</a>
+        </div>
+    </section>
 
-  <div class="voucher-cards">
-    <div class="voucher-card">
-      <h3>Advanced Hair Restoration</h3>
-      <p>Consultation with our hair transplant specialists and personalized treatment plan with post-procedure care kit.</p>
-      <p class="price">₹ 3,999</p>
-      <a href="#contact" class="btn-book">Book</a>
-    </div>
+    <section id="about" class="about-section">
+        <div class="about-container">
+            <div class="about-image">
+                <img src="assets/images/about-drharipriya.jpg" alt="Dr. Haripriya" />
+            </div>
+            <div class="about-content">
+                <h2>About <span>Dr. Haripriya Janagama</span></h2>
+                <p class="subtitle">Director, Dr.Haripriya Aviva Aesthetics</p>
+                <h3>Welcome to Aviva Aesthetics</h3>
+                <p>
+                    Welcome to Aviva, where beauty, confidence, and self-care converge. As the Director of this distinguished clinic, it's my passion and privilege to lead a team of Doctors that is dedicated to enhancing your natural beauty and well-being.
+                </p>
+                <p>
+                    At Aviva, we believe that true beauty begins with self-love, and we offer a wide range of advanced, non-invasive treatments designed to help you look and feel your best at every stage of life. From rejuvenating skincare solutions to body contouring and everything in between, we use the latest techniques and state-of-the-art technology to deliver results that are not only visible but transformative.
+                </p>
+                <p>
+                    Our clinic is a sanctuary where you can relax, feel confident, and trust in our personalized care. We are committed to providing you with exceptional service, creating a space where you are treated with the utmost respect and professionalism. It's our goal to ensure that every visit leaves you feeling refreshed, empowered, and radiant.
+                </p>
+                <p>
+                    Thank you for choosing Aviva Clinic as your partner in beauty. We are honored to accompany you on this journey towards your best self.
+                </p>
+                <div class="about-stats">
+                    <div class="stat-card"><strong>500+</strong><br />Happy Clients</div>
+                    <div class="stat-card"><strong>25+</strong><br />Treatments</div>
+                    <div class="stat-card"><strong>5+</strong><br />Years Experience</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <div class="voucher-card popular">
-      <h3>Signature Dermatology Package</h3>
-      <p>Customized skin protocol by Dr. Haripriya for optimal skin health.</p>
-      <p class="price">₹ 4,999</p>
-      <a href="#contact" class="btn-book">Book</a>
-    </div>
+    <section id="exclusives" class="services-section">
+        <h2 class="section-title">Our Exclusives</h2>
+        <p class="section-subtitle">
+            Specialized in hair transplantation, hair loss treatments, skin treatments, laser procedures, and smile enhancement.
+        </p>
 
-    <div class="voucher-card">
-      <h3>Aesthetic Surgery Consultation</h3>
-      <p>In-depth consultation with our surgery team including imaging and treatment guidance.</p>
-      <p class="price">₹ 2,499</p>
-      <a href="#contact" class="btn-book">Book</a>
-    </div>
-  </div>
-</section>
+        <div class="service-grid">
+            <div class="service-card">
+                <a href="hair.html">
+                    <img src="assets/images/service-hair.jpg" alt="Hair Transplantation">
+                    <div class="service-content">
+                        <h3>Hair Transplantation</h3>
+                        <p>Advanced FUE, FUT, PRP, and GFC hair loss treatments performed by experienced professionals for natural results.</p>
+                        <span class="learn-more">Learn More →</span>
+                    </div>
+                </a>
+            </div>
 
-<!-- Before and after gallery -->
-<section id="before-after" class="before-after-section">
-  <h2 class="section-title">Before & After Transformations</h2>
-  <div class="slider-container">
-    <button class="slider-btn prev" onclick="moveSlide(-1)">&#10094;</button>
-    <div class="slider-wrapper" id="slider">
-      <div class="slide"><img src="assets/images/laser1.jpg" alt="Before and After 1"></div>
-      <div class="slide"><img src="assets/images/eyebrows.jpg" alt="Before and After 2"></div>
-      <div class="slide"><img src="assets/images/hairfillers.jpg" alt="Before and After 3"></div>
-      <div class="slide"><img src="assets/images/hydrafacial.jpg" alt="Before and After 4"></div>
-      <!-- Add more slides as needed -->
-    </div>
-    <button class="slider-btn next" onclick="moveSlide(1)">&#10095;</button>
-  </div>
-</section>
+            <div class="service-card">
+                <a href="skin.html">
+                    <img src="assets/images/service-skin.jpg" alt="Skin Treatments">
+                    <div class="service-content">
+                        <h3>Skin Treatments</h3>
+                        <p>Facials, chemical peels, dermabrasion & medical-grade solutions for glowing, healthy skin.</p>
+                        <span class="learn-more">Learn More →</span>
+                    </div>
+                </a>
+            </div>
 
-<!-- java script for funtionality of before and after gallery -->
+            <div class="service-card">
+                <a href="laser.html">
+                    <img src="assets/images/service-laser.jpg" alt="Laser Procedures">
+                    <div class="service-content">
+                        <h3>Laser Procedures</h3>
+                        <p>Hair removal, pigmentation correction, and advanced rejuvenation techniques with state-of-the-art lasers.</p>
+                        <span class="learn-more">Learn More →</span>
+                    </div>
+                </a>
+            </div>
 
-<script>
-  let slideIndex = 0;
+            <div class="service-card">
+                <a href="smile.html">
+                    <img src="assets/images/service-smile.jpg" alt="Smile Enhancement">
+                    <div class="service-content">
+                        <h3>Smile Enhancement</h3>
+                        <p>Cosmetic dental procedures including teeth whitening, veneers, and gum reshaping for a confident smile.</p>
+                        <span class="learn-more">Learn More →</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
 
-  function moveSlide(direction) {
-    const slider = document.getElementById("slider");
-    const slides = slider.querySelectorAll(".slide");
-    const slideWidth = slides[0].offsetWidth + 16; // include gap (1rem)
-    const visibleSlides = Math.floor(slider.parentElement.offsetWidth / slideWidth);
-    const maxIndex = slides.length - visibleSlides;
+    <section id="vouchers" class="exclusive-section">
+        <h2>🎁 Exclusive Treatment Vouchers</h2>
+        <p class="section-subtext">Experience premium dermatology and cosmetic treatments by Dr. Haripriya and our team of specialists.</p>
+        <div class="voucher-cards">
+            <div class="voucher-card">
+                <h3>Advanced Hair Restoration</h3>
+                <p>Consultation with our hair transplant specialists and personalized treatment plan with post-procedure care kit.</p>
+                <p class="price">₹ 3,999</p>
+                <a href="#contact" class="btn-book">Book</a>
+            </div>
 
-    slideIndex += direction;
+            <div class="voucher-card popular">
+                <h3>Signature Dermatology Package</h3>
+                <p>Customized skin protocol by Dr. Haripriya for optimal skin health.</p>
+                <p class="price">₹ 4,999</p>
+                <a href="#contact" class="btn-book">Book</a>
+            </div>
 
-    if (slideIndex < 0) slideIndex = maxIndex;
-    if (slideIndex > maxIndex) slideIndex = 0;
+            <div class="voucher-card">
+                <h3>Aesthetic Surgery Consultation</h3>
+                <p>In-depth consultation with our surgery team including imaging and treatment guidance.</p>
+                <p class="price">₹ 2,499</p>
+                <a href="#contact" class="btn-book">Book</a>
+            </div>
+        </div>
+    </section>
 
-    const offset = -slideIndex * slideWidth;
-    slider.style.transform = `translateX(${offset}px)`;
-  }
+    <section id="before-after" class="before-after-section">
+        <h2 class="section-title">Before & After Transformations</h2>
+        <div class="slider-container">
+            <button class="slider-btn prev" onclick="moveSlide(-1)">❮</button>
+            <div class="slider-wrapper" id="slider">
+                <div class="slide"><img src="assets/images/laser1.jpg" alt="Before and After 1"></div>
+                <div class="slide"><img src="assets/images/eyebrows.jpg" alt="Before and After 2"></div>
+                <div class="slide"><img src="assets/images/hairfillers.jpg" alt="Before and After 3"></div>
+                <div class="slide"><img src="assets/images/hydrafacial.jpg" alt="Before and After 4"></div>
+                </div>
+            <button class="slider-btn next" onclick="moveSlide(1)">❯</button>
+        </div>
+    </section>
 
-  // Optional: Auto-slide
-  setInterval(() => moveSlide(1), 5000);
-</script>
+    <script>
+        let slideIndex = 0;
 
-<!-- EXPERT TEAM -->
-<section class="team-section">
-  <h2>👩‍⚕️ Our Expert Medical Team</h2>
-  <p>Led by Dr. Haripriya, our clinic brings specialists in dermatology, hair transplantation, and surgery together.</p>
+        function moveSlide(direction) {
+            const slider = document.getElementById("slider");
+            const slides = slider.querySelectorAll(".slide");
+            const slideWidth = slides[0].offsetWidth + 16; // include gap (1rem)
+            const visibleSlides = Math.floor(slider.parentElement.offsetWidth / slideWidth);
+            const maxIndex = slides.length - visibleSlides;
 
-  <div class="team-cards">
-    <div class="team-member">
-      <img src="assets/images/doc1.jpg" alt="Dr. Haripriya">
-      <h4>Dr. Haripriya</h4>
-      <p>Lead Aesthetician & Founder</p>
-    </div>
+            slideIndex += direction;
 
-    <div class="team-member">
-      <img src="assets/images/doc2.jpg" alt="Dr. Rahul Sharma">
-      <h4>Dr. Sandeep</h4>
-      <p>Consultant.Plastic Surgeon</p>
-    </div>
+            if (slideIndex < 0) slideIndex = maxIndex;
+            if (slideIndex > maxIndex) slideIndex = 0;
 
-    <div class="team-member">
-      <img src="assets/images/doc3.jpg" alt="Dr. Priya Sharma">
-      <h4>Dr.Samba Raju</h4>
-      <p>Consultant. Dermatologist</p>
-    </div>
-  </div>
-</section>
-
-<!-- CLIENT TESTINOMAILS -->
-<section id="testimonials" class="testimonials-section">
-  <h2>Client Testimonials</h2>
-  <p class="subtext">Discover what our clients have to say about their experience with us</p>
-
-  <div class="testimonial-slider">
-    <div class="testimonial-slide active">
-      <div class="stars">★★★★★</div>
-      <p class="review">The hair restoration program designed by Dr. Haripriya has been life-changing. I'm seeing remarkable results and the team has been supportive throughout the entire process.</p>
-      <h4>David Thompson</h4>
-      <span>Hair Restoration</span>
-    </div>
-
-    <div class="testimonial-slide">
-      <div class="stars">★★★★★</div>
-      <p class="review">The non-surgical body contouring treatments at Aviva Aesthetics helped me achieve results that diet and exercise alone couldn’t accomplish. I feel amazing in my clothes again!</p>
-      <h4>Priya Sharma</h4>
-      <span>Body Contouring</span>
-    </div>
-
-    <div class="testimonial-slide">
-      <div class="stars">★★★★★</div>
-      <p class="review">The holistic approach to aesthetics at this clinic is refreshing. Dr. Haripriya truly considers overall wellness alongside aesthetic goals, making for better, more sustainable results.</p>
-      <h4>James Wilson</h4>
-      <span>Wellness Program</span>
-    </div>
-  </div>
-
-  <!-- Dots -->
-  <div class="testimonial-dots">
-    <span class="dot active" onclick="showSlide(0)"></span>
-    <span class="dot" onclick="showSlide(1)"></span>
-    <span class="dot" onclick="showSlide(2)"></span>
-  </div>
-</section>
-
-
-
-<!-- Java script for client testinomails scrolliing auto matically for every 5 sec -->  
-<script>
-  let currentSlide = 0;
-  const slides = document.querySelectorAll('.testimonial-slide');
-  const dots = document.querySelectorAll('.dot');
-
-  function showSlide(index) {
-    slides.forEach((slide, i) => {
-      slide.classList.remove('active');
-      dots[i].classList.remove('active');
-    });
-    slides[index].classList.add('active');
-    dots[index].classList.add('active');
-    currentSlide = index;
-  }
-
-  // Optional: Auto slide every 5s
-  setInterval(() => {
-    currentSlide = (currentSlide + 1) % slides.length;
-    showSlide(currentSlide);
-  }, 5000);
-</script>
-
-
-
-<!-- contact us and book appointment form -->
-
-<!-- Contact Section -->
-<section id="contact" class="contact-section">
-  <!-- Left: Get In Touch -->
-  <div class="contact-box">
-    <h3>Get In Touch</h3>
-    <p><strong>Phone:</strong> +91 8125251010</p>
-    <p><small>9am - 6pm</small></p>
-    <p><strong>Email:</strong> info@aviva-aesthetics.com</p>
-    <p><small>We’ll respond within 4-5 hours</small></p>
-    <p><strong>Location:</strong> Court Chowrata, Biba showroom, Karimnagar</p>
-    <p><small>Convenient parking available</small></p>
-    <p>
-      <a href="https://instagram.com/dr_haripriyaavivaaesthetics" target="_blank">
-        <img src="assets/images/icons8-instagram-48.png" alt="Instagram" style="width:24px; margin-right:8px;">
-      </a>
-      <a href="https://facebook.com/YOUR_PAGE" target="_blank">
-        <img src="assets/images/icons8-facebook-48.png" alt="Facebook" style="width:24px;">
-      </a>
-    </p>
-    <p><strong>Monday - Friday:</strong> 9:00 AM - 7:00 PM</p>
-    <p><strong>Saturday:</strong> 10:00 AM - 4:00 PM</p>
-    <p><strong>Sunday:</strong> Closed</p>
-  </div>
-
-<!-- linking frontendwith backend for testing -->
-
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const appointmentForm = document.getElementById('appointmentForm');
-      console.log('Appointment form selected:', appointmentForm); // Debug log
-
-    // Set CSRF cookie by hitting Django once (important for separate front & backend)
-      fetch("http://127.0.0.1:8000/get-csrf-token/", {
-        credentials: "include"
-      })
-        .then(() => console.log("CSRF cookie set"))
-        .catch(err => console.error("Failed to set CSRF cookie:", err));
-
-      if (appointmentForm) {
-        appointmentForm.addEventListener('submit', function (event) {
-        console.log('Form submitted!');
-        event.preventDefault();
-
-        const formData = {
-          name: this.querySelector('input[name="name"]').value,
-          email: this.querySelector('input[name="email"]').value,
-          phone: this.querySelector('input[name="phone"]').value,
-          service: this.querySelector('select[name="service"]').value,
-          date: this.querySelector('input[name="date"]').value,
-          time: this.querySelector('input[name="time"]').value,
-          message: this.querySelector('textarea[name="message"]').value
-        };
-        console.log('Form data:', formData);
-
-        fetch('http://127.0.0.1:8000/book/', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'X-CSRFToken': getCookie('csrftoken') // CSRF token from cookie
-          },
-          credentials: 'include', // Required for CSRF cookies
-          body: JSON.stringify(formData)
-        })
-          .then(response => {
-            console.log('Response received:', response);
-            if (!response.ok) {
-              return response.json().then(data => {
-                throw new Error(data.error || 'Something went wrong!');
-              });
-            }
-            return response.json();
-          })
-          .then(data => {
-            console.log('Success data:', data);
-            alert('Appointment request sent successfully!');
-            appointmentForm.reset();
-          })
-          .catch(error => {
-            console.error('Error:', error);
-            alert('Failed to send appointment request. Please try again.');
-          });
-        });
-
-        function getCookie(name) {
-          let cookieValue = null;
-          if (document.cookie && document.cookie !== '') {
-            const cookies = document.cookie.split(';');
-            for (let i = 0; i < cookies.length; i++) {
-              let cookie = cookies[i].trimStart();
-              if (cookie.substring(0, name.length + 1) === (name + '=')) {
-                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-                break;
-              }
-            }
-          }
-          return cookieValue;
+            const offset = -slideIndex * slideWidth;
+            slider.style.transform = `translateX(${offset}px)`;
         }
-      } else {
-        console.error('Appointment form not found!');
-      }
-    });
-  </script>
 
-  <!-- Right: Book Your Appointment -->
-  <div class="appointment-box">
-  <h3>Book Your Appointment</h3>
+        // Removed setInterval for auto-sliding
+    </script>
+
+    <section class="team-section" id="team-section">
+        <h2>👩‍⚕️ Our Expert Medical Team</h2>
+        <p>Led by Dr. Haripriya, our clinic brings specialists in dermatology, hair transplantation, and surgery together.</p>
+
+        <div class="team-cards">
+            <div class="team-member">
+                <img src="assets/images/doc1.jpg" alt="Dr. Haripriya">
+                <h4>Dr. Haripriya</h4>
+                <p>Lead Aesthetician & Founder</p>
+            </div>
+
+            <div class="team-member">
+                <img src="assets/images/doc2.jpg" alt="Dr. Rahul Sharma">
+                <h4>Dr. Sandeep</h4>
+                <p>Consultant.Plastic Surgeon</p>
+            </div>
+
+            <div class="team-member">
+                <img src="assets/images/doc3.jpg" alt="Dr. Priya Sharma">
+                <h4>Dr.Samba Raju</h4>
+                <p>Consultant. Dermatologist</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="testimonials-section">
+        <h2>Client Testimonials</h2>
+        <p class="subtext">Discover what our clients have to say about their experience with us</p>
+
+        <div class="testimonial-slider">
+            <div class="testimonial-slide active">
+                <div class="stars">★★★★★</div>
+                <p class="review">The hair restoration program designed by Dr. Haripriya has been life-changing. I'm seeing remarkable results and the team has been supportive throughout the entire process.</p>
+                <h4>David Thompson</h4>
+                <span>Hair Restoration</span>
+            </div>
+
+            <div class="testimonial-slide">
+                <div class="stars">★★★★★</div>
+                <p class="review">The non-surgical body contouring treatments at Aviva Aesthetics helped me achieve results that diet and exercise alone couldn’t accomplish. I feel amazing in my clothes again!</p>
+                <h4>Priya Sharma</h4>
+                <span>Body Contouring</span>
+            </div>
+
+            <div class="testimonial-slide">
+                <div class="stars">★★★★★</div>
+                <p class="review">The holistic approach to aesthetics at this clinic is refreshing. Dr. Haripriya truly considers overall wellness alongside aesthetic goals, making for better, more sustainable results.</p>
+                <h4>James Wilson</h4>
+                <span>Wellness Program</span>
+            </div>
+        </div>
+
+        <div class="testimonial-dots">
+            <span class="dot active" onclick="showSlide(0)"></span>
+            <span class="dot" onclick="showSlide(1)"></span>
+            <span class="dot" onclick="showSlide(2)"></span>
+        </div>
+    </section>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.testimonial-slide');
+        const dots = document.querySelectorAll('.dot');
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                dots[i].classList.remove('active');
+            });
+            slides[index].classList.add('active');
+            dots[index].classList.add('active');
+            currentSlide = index;
+        }
+
+        // Optional: Auto slide every 5s
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }, 5000);
+    </script>
+
+    <section id="contact" class="contact-section">
+        <div class="contact-box">
+            <h3>Get In Touch</h3>
+            <p><strong>Phone:</strong> +91 8125251010</p>
+            <p><small>9am - 6pm</small></p>
+            <p><strong>Email:</strong> info@aviva-aesthetics.com</p>
+            <p><small>We’ll respond within 4-5 hours</small></p>
+            <p><strong>Location:</strong> Court Chowrata, Biba showroom, Karimnagar</p>
+            <p><small>Convenient parking available</small></p>
+            <p>
+                <a href="https://instagram.com/dr_haripriyaavivaaesthetics" target="_blank">
+                    <img src="assets/images/icons8-instagram-48.png" alt="Instagram" style="width:24px; margin-right:8px;">
+                </a>
+                <a href="https://facebook.com/YOUR_PAGE" target="_blank">
+                    <img src="assets/images/icons8-facebook-48.png" alt="Facebook" style="width:24px;">
+                </a>
+            </p>
+            <p><strong>Monday - Friday:</strong> 9:00 AM - 7:00 PM</p>
+            <p><strong>Saturday:</strong> 10:00 AM - 4:00 PM</p>
+            <p><strong>Sunday:</strong> Closed</p>
+        </div>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const appointmentForm = document.getElementById('appointmentForm');
+                console.log('Appointment form selected:', appointmentForm); // Debug log
+
+                // Set CSRF cookie by hitting Django once (important for separate front & backend)
+                fetch("http://127.0.0.1:8000/get-csrf-token/", {
+                    credentials: "include"
+                })
+                    .then(() => console.log("CSRF cookie set"))
+                    .catch(err => console.error("Failed to set CSRF cookie:", err));
+
+                if (appointmentForm) {
+                    appointmentForm.addEventListener('submit', function (event) {
+                        console.log('Form submitted!');
+                        event.preventDefault();
+
+                        const formData = {
+                            name: this.querySelector('input[name="name"]').value,
+                            email: this.querySelector('input[name="email"]').value,
+                            phone: this.querySelector('input[name="phone"]').value,
+                            service: this.querySelector('select[name="service"]').value,
+                            date: this.querySelector('input[name="date"]').value,
+                            time: this.querySelector('input[name="time"]').value,
+                            message: this.querySelector('textarea[name="message"]').value
+                        };
+                        console.log('Form data:', formData);
+
+                        fetch('http://127.0.0.1:8000/book/', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'X-CSRFToken': getCookie('csrftoken') // CSRF token from cookie
+                            },
+                            credentials: 'include', // Required for CSRF cookies
+                            body: JSON.stringify(formData)
+                        })
+                            .then(response => {
+                                console.log('Response received:', response);
+                                if (!response.ok) {
+                                    return response.json().then(data => {
+                                        throw new Error(data.error || 'Something went wrong!');
+                                    });
+                                }
+                                return response.json();
+                            })
+                            .then(data => {
+                                console.log('Success data:', data);
+                                alert('Appointment request sent successfully!');
+                                appointmentForm.reset();
+                            })
+                            .catch(error => {
+                                console.error('Error:', error);
+                                alert('Failed to send appointment request. Please try again.');
+                            });
+                    });
+
+                    function getCookie(name) {
+                        let cookieValue = null;
+                        if (document.cookie && document.cookie !== '') {
+                            const cookies = document.cookie.split(';');
+                            for (let i = 0; i < cookies.length; i++) {
+                                let cookie = cookies[i].trimStart();
+                                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                                    break;
+                                }
+                            }
+                        }
+                        return cookieValue;
+                    }
+                } else {
+                    console.error('Appointment form not found!');
+                }
+            });
+        </script>
+
+        <div class="appointment-box">
+            <h3>Book Your Appointment</h3>
+            
   <form id="appointmentForm" action="http://127.0.0.1:8000/book/" method="POST">
     <input type="text" placeholder="Full Name" name="name" required>
     <input type="email" placeholder="Email Address" name="email" required>
@@ -437,81 +450,78 @@
 <!-- Footer Section -->
 <footer style="background-color: #c2a36c; color: white; padding: 3rem 1rem;">
   <div style="max-width: 1100px; margin: auto; display: flex; flex-wrap: wrap; gap: 2rem; justify-content: space-between;">
-    
-    <!-- Column 1 -->
-    <div style="flex: 1; min-width: 200px;">
-      <h3>Aviva Aesthetics</h3>
-      <p>Premium aesthetic treatments and procedures by Dr. Haripriya, providing exceptional care and natural-looking results.</p>
-      <div style="margin-top: 1rem;">
-        <a href="https://instagram.com/dr_haripriyaavivaaesthetics" target="_blank" style="margin-right: 10px;">
-          <img src="assets/images/icons8-instagram-48.png" alt="Instagram" width="24">
-        </a>
-        <a href="https://www.facebook.com/" target="_blank">
-          <img src="assets/images/icons8-facebook-48.png" alt="Facebook" width="24">
-        </a>
+
+      <div style="flex: 1; min-width: 200px;">
+          <h3>Aviva Aesthetics</h3>
+          <p>Premium aesthetic treatments and procedures by Dr. Haripriya, providing exceptional care and natural-looking results.</p>
+          <div style="margin-top: 1rem;">
+              <a href="https://instagram.com/dr_haripriyaavivaaesthetics" target="_blank" style="margin-right: 10px;">
+                  <img src="assets/images/icons8-instagram-48.png" alt="Instagram" width="24">
+              </a>
+              <a href="https://www.facebook.com/" target="_blank">
+                  <img src="assets/images/icons8-facebook-48.png" alt="Facebook" width="24">
+              </a>
+          </div>
       </div>
-    </div>
 
-    <!-- Column 2 -->
-    <div style="flex: 1; min-width: 150px;">
-      <h4>Quick Links</h4>
-      <ul style="list-style: none; padding: 0;">
-        
-        <li><a href="#" id="home-link" style="color: white; text-decoration: none;">Home</a></li>
-        <li><a href="#about" style="color: white; text-decoration: none;">About Us</a></li>
-        <li><a href="#services" style="color: white; text-decoration: none;">Services</a></li>
-        <li><a href="#testimonials" style="color: white; text-decoration: none;">Testimonials</a></li>
-        <li><a href="#contact" style="color: white; text-decoration: none;">Contact</a></li>
-        <li><a href="#privacy" style="color: white; text-decoration: none;">Privacy Policy</a></li>
-      </ul>
-    </div>
+      <div style="flex: 1; min-width: 150px;">
+          <h4>Quick Links</h4>
+          <ul style="list-style: none; padding: 0;">
 
-    <!-- Column 3 -->
-    <div style="flex: 1; min-width: 150px;">
-      <h4>Services</h4>
-      <ul style="list-style: none; padding: 0;">
-        <li>Facial Treatments</li>
-        <li>Injectables</li>
-        <li>Skin Rejuvenation</li>
-        <li>Body Contouring</li>
-        <li>Hair Restoration</li>
-        <li>Wellness Therapies</li>
-      </ul>
-    </div>
+              <li><a href="#" id="home-link" style="color: white; text-decoration: none;">Home</a></li>
+              <li><a href="#about" style="color: white; text-decoration: none;">About Us</a></li>
+              <li class="dropdown-footer">
+                  <a href="#" style="color: white; text-decoration: none;">Services</a>
+                  <div class="dropdown-content-footer">
+                      <a href="plastic-surgery.html" style="color: black;">Plastic & Cosmetic Surgery</a>
+                      <a href="dermatology.html" style="color: black;">Dermatology</a>
+                      <a href="skin-hair.html" style="color: black;">Skin & Hair Aesthetics</a>
+                      <a href="dental.html" style="color: black;">Smile Clinic (Dental)</a>
+                      <a href="weight-loss.html" style="color: black;">Obesity Clinic (Weight Loss)</a>
+                      <a href="gynecology.html" style="color: black;">Cosmetic Gynecology</a>
+                  </div>
+              </li>
+              <li><a href="#testimonials" style="color: white; text-decoration: none;">Testimonials</a></li>
+              <li><a href="#contact" style="color: white; text-decoration: none;">Contact</a></li>
+              <li><a href="#privacy" style="color: white; text-decoration: none;">Privacy Policy</a></li>
+          </ul>
+      </div>
 
-    <!-- Column 4 -->
-    <div style="flex: 1; min-width: 200px;">
-      <h4>Contact Information</h4>
-      <p><strong>Location:</strong> Court Chowrasta, Biba showroom, Karimnagar</p>
-      <p><strong>Phone:</strong> +91 8125251010</p>
-      <p><strong>Email:</strong> info@aviva-aesthetics.com</p>
-    </div>
+      <div style="flex: 1; min-width: 150px;">
+          <h4>Services</h4>
+          <ul style="list-style: none; padding: 0;">
+              <li>Facial Treatments</li>
+              <li>Injectables</li>
+              <li>Skin Rejuvenation</li>
+              <li>Body Contouring</li>
+              <li>Hair Restoration</li>
+              <li>Wellness Therapies</li>
+          </ul>
+      </div>
+
+      <div style="flex: 1; min-width: 200px;">
+          <h4>Contact Information</h4>
+          <p><strong>Location:</strong> Court Chowrasta, Biba showroom, Karimnagar</p>
+          <p><strong>Phone:</strong> +91 8125251010</p>
+          <p><strong>Email:</strong> info@aviva-aesthetics.com</p>
+      </div>
   </div>
 </footer>
 
 <script>
-
 document.getElementById('home-link').addEventListener('click', function(e) {
   e.preventDefault();
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
-
 </script>
 
-
-
-
-<!-- whatsapp float button -->
-<a href="https://wa.me/918125251010" 
-   class="whatsapp-float" 
-   target="_blank" 
-   aria-label="Chat on WhatsApp">
+<a href="https://wa.me/918125251010"
+  class="whatsapp-float"
+  target="_blank"
+  aria-label="Chat on WhatsApp">
   <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp" />
 </a>
 
-
-<script src="assets/js/script.js"></script>
+<script src="assets/js/before-after-slider.js"></script>
 </body>
 </html>
-
-
