@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Laser Hair Removal - Aviva Aesthetics</title>
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Basic dropdown styling */
+        .dropdown {
+            position: relative;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #ffffff;
+            min-width: 220px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content a:hover {background-color: #ddd;}
+        .dropdown:hover .dropdown-content {display: block;}
+
+        /* Hero Section */
+        .hero-section {
+            position: relative;
+            width: 100%;
+            padding-bottom: 45.45%; /* (500 / 1100) * 100% to maintain 1100x500 aspect ratio */
+            overflow: hidden;
+            height: auto;
+        }
+
+        .hero-section img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .hero-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white; /* Keep hero text white for contrast on image */
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            width: 90%;
+            background-color: rgba(0, 0, 0, 0.6); /* Black background with 60% opacity */
+            padding: 20px; /* Add some padding around the text */
+            border-radius: 8px; /* Slightly rounded corners for the background */
+            max-width: 600px; /* Limit the width of the background box */
+            box-sizing: border-box; /* Include padding in the width */
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Content Sections */
+        .content-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        /* Main H1 in content-section - SPECIFICALLY BLACK */
+        .content-section .main-content-title {
+            color: black; /* This specific H1 is now black */
+        }
+        
+        /* Other headings within content-section remain gold */
+        .content-section h2,
+        .content-section h3 {
+            color: #D4AF37; /* Gold color for H2 and H3 */
+        }
+
+        .content-section h1 { /* General style for h1, main-content-title overrides color */
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .content-section h2 {
+            font-size: 2.2rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .content-section h3 {
+            font-size: 1.8rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            text-align: left; /* Keep H3 left-aligned as per original hair transplant page */
+        }
+
+        /* Specific H3 for aftercare tips to center it */
+        .aftercare h3 {
+            text-align: center; /* Center the Aftercare Tips heading */
+        }
+
+
+        .content-section p {
+            color: #444;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+            text-align: justify; /* Keep paragraphs justified */
+        }
+
+        /* Specific P for consultation message to center it */
+        .book-appointment p {
+            text-align: center; /* Center the consultation message */
+        }
+
+
+        .content-section ul {
+            list-style: disc; /* Default disc for generic ul, overridden by .services-list */
+            margin-left: 2rem;
+            margin-bottom: 2rem;
+            color: #555;
+            padding-left: 0;
+        }
+        /* Custom bullet style for services-list */
+        .content-section .services-list {
+            list-style: none; /* Remove default disc */
+            padding-left: 0;
+            max-width: 800px;
+            margin: 2rem auto;
+        }
+
+        .content-section .services-list li {
+            position: relative;
+            padding-left: 30px; /* Space for the custom bullet */
+            margin-bottom: 10px;
+            color: #444;
+            font-size: 1.05rem;
+            line-height: 1.6;
+            text-align: left;
+        }
+
+        .content-section .services-list li::before {
+            content: '>'; /* Custom bullet character */
+            position: absolute;
+            left: 0;
+            color: #D4AF37; /* Gold color for bullet */
+            font-size: 1.2em;
+            top: 0;
+        }
+
+        .content-section section {
+            margin-bottom: 3rem;
+        }
+
+        .author {
+            text-align: center;
+            color: #D4AF37; /* Gold color for author text */
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .introduction {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .introduction p {
+            text-align: center;
+        }
+
+        .book-appointment {
+            text-align: center;
+            padding: 3rem 0;
+        }
+
+        .book-appointment-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #D4AF37; /* Gold theme color */
+            color: white; /* White text for contrast */
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border: 1px solid #c2a36c;
+        }
+
+        .book-appointment-button:hover {
+            background-color: #000000; /* Darker shade (black) on hover */
+            color: white; /* White text on hover */
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Pricing Table */
+        .pricing-table {
+            width: 100%;
+            max-width: 1000px;
+            margin: 3rem auto;
+            border-collapse: collapse;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .pricing-table th,
+        .pricing-table td {
+            padding: 1.2rem;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        .pricing-table th {
+            background-color: #D4AF37; /* Gold for table header */
+            color: white;
+            font-size: 1.1rem;
+        }
+
+        .pricing-table td {
+            font-size: 1.05rem;
+        }
+
+        .pricing-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .pricing-table tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        /* WhatsApp Float Button */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 100;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .whatsapp-float img {
+            width: 35px;
+            height: 35px;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .content-section {
+                padding: 3rem 1.5rem;
+            }
+
+            .content-section h1 {
+                font-size: 2.2rem;
+            }
+
+            .content-section h2 {
+                font-size: 1.8rem;
+            }
+
+            .content-section h3 {
+                font-size: 1.5rem;
+            }
+
+            .content-section p,
+            .content-section ul li,
+            .content-section .services-list li {
+                font-size: 1rem;
+            }
+            .hero-section {
+                padding-bottom: 60%;
+                height: auto;
+            }
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            .content-section .services-list li {
+                padding-left: 25px;
+            }
+            .hero-content {
+                width: 95%; /* Adjust width for smaller screens */
+                padding: 15px; /* Adjust padding for smaller screens */
+            }
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                right: 20px;
+            }
+            .whatsapp-float img {
+                width: 30px;
+                height: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <img src="/assets/images/logo.png" alt="Aviva Aesthetics Logo" class="logo-img" />
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#about">About</a>
+                        <div class="dropdown-content">
+                            <a href="about-dr.html">About Doctor</a>
+                        </div>
+                    </li>
+                    <li><a href="index.html#exclusives">Exclusives</a></li>
+                    <li class="dropdown">
+                        <a href="#">Services</a>
+                        <div class="dropdown-content">
+                            <a href="plastic-surgery.html">Plastic & Cosmetic Surgery</a>
+                            <a href="dermatology.html">Dermatology</a>
+                            <a href="skinandhairaesthetics.html">Skin & Hair Aesthetics</a>
+                            <a href="smile.html">Smile Clinic (Dental)</a>
+                            <a href="obesity-clinic.html">Obesity Clinic (Weight Loss)</a>
+                            <a href="cosmetic-gynecology.html">Cosmetic Gynecology</a>
+                            <a href="pediatrics.html">Pediatrics Clinic</a>
+                        </div>
+                    </li>
+                    <li><a href="index.html#vouchers">Vouchers</a></li>
+                    <li><a href="index.html#contact">Appointment</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                    <li><a href="index.html#team-section">Our Team</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero-section">
+        <img src="/assets/images/laserhero.png" alt="Laser Hair Removal Treatment" onerror="this.onerror=null;this.src='https://placehold.co/1100x500/E0D0B0/7A5A28?text=Laser+Hair+Removal';">
+        <div class="hero-content">
+            <h1>Laser Hair Removal</h1>
+            <p>Achieve Silky Smooth Skin with Advanced Laser Technology</p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <article class="treatment-info">
+            <h1 class="main-content-title">Laser Hair Removal in India: Everything You Need to Know</h1>
+            <h2 class="author">By Dr. Haripriya – Aviva Aesthetics Clinic</h2>
+            
+            <div class="introduction">
+                <p>Unwanted body hair is a common concern among both men and women in India. From regular waxing appointments to painful threading sessions, hair removal can be time-consuming and uncomfortable. Enter laser hair removal—a modern, long-term solution that's gaining popularity across India for its convenience and effectiveness.</p>
+                <p>At Aviva Aesthetics Clinic, led by Dr.Haripriya, we offer advanced, USFDA-approved laser technology designed specifically for Indian skin tones, ensuring safe and effective results.</p>
+            </div>
+
+            <section class="treatment-details">
+                <h2>What is Laser Hair Removal?</h2>
+                <p>Laser hair removal is a non-invasive cosmetic procedure that uses concentrated beams of light to target and destroy hair follicles. This inhibits future hair growth, resulting in smoother skin and reduced dependence on traditional methods.</p>
+                <p>At Dr.Haripriya's Aviva Aesthetics Clinic, Karimnagar we use industry-leading devices tailored for different skin and hair types to deliver precise, customized treatments.</p>
+
+                <h2>How Does It Work?</h2>
+                <p>The laser emits light that is absorbed by the pigment (melanin) in the hair. This light converts to heat and damages the follicle, inhibiting future growth. Modern technologies like Triple Diode and Nd:YAG lasers, available at Aviva Aesthetics, Karimnagar are specifically effective for Indian skin tones, minimizing risks like burns or pigmentation.</p>
+
+                <h2>Is It Safe for Indian Skin?</h2>
+                <p>Yes. Thanks to advancements in technology, laser hair removal is now safe for all skin types, including medium to darker Indian complexions. Dr.Haripriya ensures that every patient undergoes a detailed skin assessment at Aviva Aesthetics to determine the most suitable treatment plan.</p>
+
+                <h2>How Many Sessions Are Needed?</h2>
+                <p>Typically, 6 to 8 sessions spaced 4–6 weeks apart are needed. However, at Dr. Haripriya's clinic, the exact number depends on your individual hair growth cycle and area being treated. Follow-up sessions may be advised to maintain results.</p>
+            </section>
+
+            <section class="popular-areas-text-only">
+                <h2>Popular Areas for Treatment at Aviva Aesthetics</h2>
+                <ul class="services-list">
+                    <li>
+                        <h3>Face</h3>
+                        <p>Targets unwanted hair on the upper lip, chin, and sideburns for a smooth facial complexion.</p>
+                    </li>
+                    <li>
+                        <h3>Underarms</h3>
+                        <p>Offers a quick and highly effective solution for permanent hair reduction in the underarm area.</p>
+                    </li>
+                    <li>
+                        <h3>Bikini Line</h3>
+                        <p>Provides professional and discreet care for comfortable and effective hair removal in the bikini area.</p>
+                    </li>
+                    <li>
+                        <h3>Legs and Arms</h3>
+                        <p>Comprehensive full body hair removal solutions for smooth, hair-free legs and arms.</p>
+                    </li>
+                    <li>
+                        <h3>Back and Chest</h3>
+                        <p>Specialized treatments available for men seeking effective hair reduction on the back and chest.</p>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="benefits-text-only">
+                <h2>Benefits of Laser Hair Removal</h2>
+                <ul class="services-list">
+                    <li>
+                        <h3>Long-Term Results</h3>
+                        <p>Experience a permanent reduction in hair growth typically after 6–8 sessions, leading to lasting smoothness.</p>
+                    </li>
+                    <li>
+                        <h3>Precision</h3>
+                        <p>The laser selectively targets dark, coarse hairs, ensuring effective removal without damaging the surrounding skin.</p>
+                    </li>
+                    <li>
+                        <h3>Quick Sessions</h3>
+                        <p>Even small areas like the upper lip can be treated in under 10 minutes, making sessions convenient and time-efficient.</p>
+                    </li>
+                    <li>
+                        <h3>Minimal Discomfort</h3>
+                        <p>Enjoy a far more comfortable experience compared to traditional hair removal methods like waxing or epilation.</p>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="pricing">
+                <h2>Cost of Laser Hair Removal at Aviva Aesthetics Clinic</h2>
+                <table class="pricing-table">
+                    <thead>
+                        <tr>
+                            <th>Area</th>
+                            <th>Cost Per Session (INR) – Approx.</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Upper Lip</td>
+                            <td>₹1,000–₹2,000</td>
+                        </tr>
+                        <tr>
+                            <td>Underarms</td>
+                            <td>₹1,500–₹3,000</td>
+                        </tr>
+                        <tr>
+                            <td>Full Arms</td>
+                            <td>₹4,000–₹7,000</td>
+                        </tr>
+                        <tr>
+                            <td>Full Legs</td>
+                            <td>₹6,000–₹10,000</td>
+                        </tr>
+                        <tr>
+                            <td>Bikini Line</td>
+                            <td>₹3,000–₹6,000</td>
+                        </tr>
+                        <tr>
+                            <td>Full Body</td>
+                            <td>₹25,000–₹50,000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section class="aftercare">
+                <h2>Side Effects and Aftercare</h2>
+                <p>Minor redness or sensitivity is normal and usually subsides within hours. At Aviva Aesthetics, we provide detailed post-treatment care instructions to ensure a smooth recovery.</p>
+                
+                <h3>Aftercare Tips from Dr. Haripriya:</h3> <ul class="services-list"> <li>Use sunscreen daily.</li>
+                    <li>Avoid heat (hot showers, saunas) for 48 hours.</li>
+                    <li>Do not pluck or wax between sessions—only shaving is recommended.</li>
+                </ul>
+            </section>
+
+            <section class="why-choose-us">
+                <h2>Why Choose Aviva Aesthetics Clinic?</h2>
+                <ul class="services-list"> <li><strong>Experienced Specialist:</strong> Dr. Haripriya has expertise in cosmetic and aesthetic treatments.</li>
+                    <li><strong>Modern Equipment:</strong> FDA-approved laser machines suitable for Indian skin tones.</li>
+                    <li><strong>Personalized Care:</strong> Customized treatment plans based on your skin and hair type.</li>
+                    <li><strong>Professional Environment:</strong> Hygienic, professional environment with trained technicians.</li>
+                    <li><strong>Affordable Pricing:</strong> Quality treatment at small-city costs with flexible payment options.</li>
+                </ul>
+                <p>From your first consultation to post-treatment care, Aviva Aesthetics Clinic is committed to delivering safe, visible, and satisfying results.</p>
+            </section>
+
+            <section class="conclusion">
+                <h2>Final Thoughts</h2>
+                <p>Laser hair removal is an investment in long-term beauty and convenience. At Aviva Aesthetics, we understand the unique needs of Indian skin and provide solutions backed by science and care.</p>
+                
+                <p>To book a consultation or learn more about the best hair removal options for your skin type, contact Dr. Haripriya at Aviva Aesthetics Clinic today.</p>
+                
+                <section class="book-appointment">
+                    <h2>Ready for smooth, hair-free skin?</h2>
+                    <p>Schedule a personalized consultation with Dr. Haripriya today.</p> <a href="index.html#contact" class="book-appointment-button">Book Your Consultation Now</a>
+                </section>
+            </section>
+        </article>
+    </section>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+
+            <div class="footer-column brand-info">
+                <img src="assets/images/logo.PNG" alt="Aviva Aesthetics Logo" class="footer-logo">
+                <p>Aviva Aesthetics is one of the leading aesthetic clinics in Karimnagar, offering a comprehensive range of skin, hair, and body treatments.</p>
+                <div class="social-links">
+                    <a href="https://instagram.com/dr_haripriyaavivaaesthetics" target="_blank" class="social-icon">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://facebook.com/YOUR_PAGE" target="_blank" class="social-icon">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="http://youtube.com/YOUR_CHANNEL" target="_blank" class="social-icon">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-column quick-links">
+                <h4>Quick Links</h4>
+                <ul class="footer-links-list">
+                    <li><a href="index.html" id="home-link">Home</a></li>
+                    <li><a href="index.html#about">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="index.html#testimonials">Testimonials</a></li>
+                    <li><a href="index.html#contact">Contact Us</a></li>
+                    <li><a href="index.html#our-gallery">Gallery</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column useful-links">
+                <h4>Useful Links</h4>
+                <ul class="footer-links-list">
+                    <li><a href="#privacy">Privacy Policy</a></li>
+                    <li><a href="#terms">Terms and Conditions</a></li>
+                    <li><a href="#disclaimer">Disclaimer</a></li>
+                    <li><a href="#support">Support</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column make-appointment">
+                <h4>Make Appointment</h4>
+                <p class="clinic-hours">10 AM - 7 PM, Monday - Saturday</p>
+                <p class="clinic-hours">Sunday - Closed</p>
+
+                <div class="call-today-box">
+                    <div class="call-today-content">
+                        <div class="call-icon-wrapper">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="call-text-numbers">
+                            <p class="call-today-text">Call Us Today</p>
+                            <p class="call-today-number">(+91) 8125251010</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr class="footer-divider">
+
+        <div class="footer-bottom">
+            <p>© 2025 AvivaAesthetics.com. All rights reserved.</p>
+            <p>Powered by drharipriyaavivaaesthetics.com</p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/918125251010"
+        class="whatsapp-float"
+        target="_blank"
+        aria-label="Chat on WhatsApp">
+        <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp" />
+    </a>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Script for footer home link (Copied from index.html)
+        document.getElementById('home-link').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+    <script src="/assets/js/script.js"></script>
+</body>
+</html>

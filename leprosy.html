@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Leprosy Treatment - Aviva Aesthetics</title>
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Basic dropdown styling */
+        .dropdown {
+            position: relative;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #ffffff;
+            min-width: 220px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content a:hover {background-color: #ddd;}
+        .dropdown:hover .dropdown-content {display: block;}
+
+        /* Hero Section - Consistent with previous pages */
+        .hero-section {
+            position: relative;
+            width: 100%;
+            padding-bottom: 45.45%; /* Maintain aspect ratio (e.g., for a 1100x500px image: 500/1100 = 0.4545) */
+            overflow: hidden;
+            height: auto; /* Allow padding-bottom to control height */
+        }
+
+        .hero-section img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            width: 90%;
+            background-color: rgba(0, 0, 0, 0.6); /* Added from reference */
+            padding: 20px; /* Added from reference */
+            border-radius: 8px; /* Added from reference */
+            max-width: 600px; /* Adjusted for consistency */
+            box-sizing: border-box; /* Ensures padding is included in width */
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-content p {
+            font-size: 1.5rem; /* Retained from original page, good for hero */
+        }
+
+        /* Content Sections - Consistent with previous pages */
+        .content-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .content-section h1 {
+            font-size: 2.8rem;
+            color: black; /* Consistent with reference */
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .content-section h2 {
+            color: #D4AF37; /* Gold color from reference */
+            font-size: 2.2rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .content-section h3 {
+            color: #D4AF37; /* Gold color from reference */
+            font-size: 1.8rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            text-align: left; /* Kept left aligned for subheadings */
+        }
+
+        .content-section p {
+            color: #444;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        /* Custom list style (for general info) - Consistent with previous pages */
+        .content-section .info-list {
+            list-style: none;
+            padding-left: 0;
+            max-width: 800px; /* Adjust as needed for alignment */
+            margin: 2rem auto; /* Center the list */
+        }
+
+        .content-section .info-list li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 10px;
+            color: #444;
+            font-size: 1.05rem;
+            line-height: 1.6;
+            text-align: left;
+        }
+
+        .content-section .info-list li::before {
+            content: '>'; /* Custom bullet symbol */
+            position: absolute;
+            left: 0;
+            color: #D4AF37; /* Gold color for custom bullet */
+            font-size: 1.2em;
+            top: 0;
+        }
+
+        /* Checkmark list style (for benefits) - Consistent with previous pages */
+        .content-section .checkmark-list {
+            list-style: none;
+            padding-left: 0;
+            max-width: 800px; /* Adjust as needed for alignment */
+            margin: 2rem auto; /* Center the list */
+        }
+
+        .content-section .checkmark-list li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 10px;
+            color: #444;
+            font-size: 1.05rem;
+            line-height: 1.6;
+            text-align: left;
+        }
+
+        .content-section .checkmark-list li i {
+            position: absolute;
+            left: 0;
+            color: #D4AF37; /* Gold color for checkmark */
+            font-size: 1.2em;
+            top: 0;
+        }
+
+        .content-section section {
+            margin-bottom: 3rem;
+        }
+
+        .introduction {
+            margin-bottom: 3rem;
+            text-align: center; /* Consistent with reference */
+        }
+
+        .introduction p {
+            text-align: center; /* Consistent with reference */
+        }
+
+        .final-words {
+            margin-top: 4rem;
+            text-align: center;
+        }
+
+        .final-words p {
+            text-align: center;
+        }
+
+        .author {
+            text-align: center;
+            color: #444; /* Consistent with reference */
+            font-size: 1.1rem; /* Consistent with reference */
+            margin-bottom: 2.5rem;
+        }
+
+        /* Horizontal Rule - Consistent with previous pages */
+        .section-divider {
+            border: none;
+            border-top: 2px solid #D4AF37; /* Gold color */
+            margin: 40px auto;
+            width: 80%;
+            max-width: 700px;
+        }
+
+        /* Book Appointment Section - Consistent with previous pages */
+        .book-appointment {
+            text-align: center;
+            padding: 3rem 0;
+            /* Removed specific background, shadow, border-radius as they are part of the main styling in reference */
+        }
+
+        .book-appointment h2 {
+            color: #D4AF37; /* Gold color from reference */
+            margin-bottom: 15px;
+            font-size: 2.2rem;
+        }
+
+        .book-appointment p {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .book-appointment-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #D4AF37; /* Gold theme color from reference */
+            color: white; /* White text for contrast from reference */
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border: none; /* Remove border to match reference */
+        }
+
+        .book-appointment-button:hover {
+            background-color: #a88b57; /* Slightly darker gold on hover from reference */
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .content-section {
+                padding: 3rem 1.5rem;
+            }
+
+            .content-section h1 {
+                font-size: 2.2rem;
+            }
+
+            .content-section h2 {
+                font-size: 1.8rem;
+            }
+
+            .content-section h3 {
+                font-size: 1.5rem;
+            }
+
+            .content-section p,
+            .content-section .info-list li,
+            .content-section .checkmark-list li {
+                font-size: 1rem;
+            }
+            .hero-section {
+                padding-bottom: 60%; /* Adjust hero aspect ratio for mobile if needed, consistent with reference */
+            }
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            .hero-content p {
+                font-size: 0.9rem; /* Consistent with reference */
+            }
+            .content-section .info-list li,
+            .content-section .checkmark-list li {
+                padding-left: 25px; /* Adjust padding for smaller screens */
+            }
+        }
+        /* WhatsApp floating button (keep as is) */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 100;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .whatsapp-float img {
+            width: 35px;
+            height: 35px;
+        }
+
+        @media (max-width: 768px) {
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                right: 20px;
+            }
+            .whatsapp-float img {
+                width: 30px;
+                height: 30px;
+            }
+        }
+        /* Footer dropdown specific styles - if needed, though header dropdown covers most */
+        .dropdown-footer {
+            position: relative;
+        }
+        .dropdown-content-footer {
+            display: none;
+            position: absolute;
+            background-color: #ffffff; /* White background for visibility */
+            min-width: 200px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            bottom: 100%; /* Adjust position for footer dropdown */
+            left: 0;
+            /* Or top: auto; to open upwards if space below is limited */
+        }
+        .dropdown-footer:hover .dropdown-content-footer {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <img src="/assets/images/logo.png" alt="Aviva Aesthetics Logo" class="logo-img" />
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#about">About</a>
+                        <div class="dropdown-content">
+                            <a href="about-dr.html">About Doctor</a>
+                        </div>
+                    </li>
+                    <li><a href="index.html#exclusives">Exclusives</a></li>
+                    <li class="dropdown">
+                        <a href="#">Services</a>
+                        <div class="dropdown-content">
+                            <a href="plastic-surgery.html">Plastic & Cosmetic Surgery</a>
+                            <a href="dermatology.html">Dermatology</a>
+                            <a href="skinandhairaesthetics.html">Skin & Hair Aesthetics</a>
+                            <a href="smile.html">Smile Clinic (Dental)</a>
+                            <a href="obesity-clinic.html">Obesity Clinic (Weight Loss)</a>
+                            <a href="cosmetic-gynecology.html">Cosmetic Gynecology</a>
+                        </div>
+                    </li>
+                    <li><a href="index.html#vouchers">Vouchers</a></li>
+                    <li><a href="index.html#contact">Appointment</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                    <li><a href="index.html#team-section">Our Team</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero-section">
+        <img src="assets/images/leprosy-treatment-hero.jpg" alt="Leprosy Treatment">
+        <div class="hero-content">
+            <h1>Leprosy Treatment</h1>
+            <p>Early Diagnosis. Effective Care. Compassionate Treatment by Dr. Samba Raju</p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <article class="treatment-info">
+            <h1>Leprosy Treatment at Aviva Aesthetics, Karimnagar</h1>
+            <h2 class="author">By Dermatologist Dr. Samba Raju</h2>
+
+            <div class="introduction">
+                <p>Leprosy, also known as Hansen’s Disease, is a chronic infectious disease caused by the bacterium Mycobacterium leprae. It primarily affects the skin, peripheral nerves, mucosa of the upper respiratory tract, and eyes. Contrary to myths, leprosy is curable, especially when detected early.</p>
+                <p>At **Aviva Aesthetics, Karimnagar**, Dr. Samba Raju, our experienced dermatologist, provides comprehensive diagnosis, treatment, and care for patients affected by leprosy with sensitivity and expertise.</p>
+            </div>
+
+            <hr class="section-divider">
+
+            <section class="treatment-details">
+                <h2>Signs and Symptoms of Leprosy:</h2>
+                <ul class="info-list">
+                    <li><i class="fas fa-arrow-right" style="color: #D4AF37;"></i> Light or dark skin patches with reduced sensation</li>
+                    <li><i class="fas fa-arrow-right" style="color: #D4AF37;"></i> Numbness or tingling in hands or feet</li>
+                    <li><i class="fas fa-arrow-right" style="color: #D4AF37;"></i> Muscle weakness</li>
+                    <li><i class="fas fa-arrow-right" style="color: #D4AF37;"></i> Painless ulcers on hands or feet</li>
+                    <li><i class="fas fa-arrow-right" style="color: #D4AF37;"></i> Thickened peripheral nerves</li>
+                    <li><i class="fas fa-arrow-right" style="color: #D4AF37;"></i> Eye problems in severe cases</li>
+                </ul>
+                <p>Early treatment can prevent nerve damage, deformities, and long-term complications.</p>
+
+                <h2>Leprosy is Not Highly Contagious</h2>
+                <p>Leprosy spreads only through close, prolonged contact and is not transmitted by touch. With proper treatment, people with leprosy become non-infectious quickly.</p>
+
+                <h2>Treatment at Aviva Aesthetics:</h2>
+                <ul class="checkmark-list">
+                    <li><i class="fas fa-check"></i> Rifampicin, Clofazimine, and Dapsone in specific combinations</li>
+                    <li><i class="fas fa-check"></i> Treatment duration: 6–12 months or longer, depending on type</li>
+                    <li><i class="fas fa-check"></i> Monitoring for nerve damage and managing complications</li>
+                    <li><i class="fas fa-check"></i> Skin care and physiotherapy advice</li>
+                    <li><i class="fas fa-check"></i> Emotional support and guidance to reduce social stigma</li>
+                </ul>
+
+                <div class="final-words">
+                    <h2>Why Choose Aviva Aesthetics for Leprosy Treatment?</h2>
+                    <ul class="checkmark-list">
+                        <li><i class="fas fa-check"></i> Expert dermatologist care from Dr. Samba Raju</li>
+                        <li><i class="fas fa-check"></i> Use of free, WHO-supplied medications (MDT)</li>
+                        <li><i class="fas fa-check"></i> Compassionate care in a private, respectful environment</li>
+                        <li><i class="fas fa-check"></i> Focus on early recovery and prevention of disability</li>
+                        <li><i class="fas fa-check"></i> Patient education and counseling</li>
+                    </ul>
+                    <p>Leprosy is curable, and early treatment ensures a healthy, normal life. If you or someone you know shows symptoms, consult Dr. Samba Raju at **Aviva Aesthetics, Karimnagar**, for expert care.</p>
+                </div>
+
+                <section class="book-appointment">
+                    <h2>Break the Stigma, Not the Spirit</h2>
+                    <p>Schedule a personalized consultation with our expert dermatologist today.</p>
+                    <a href="index.html#contact" class="book-appointment-button">Book Your Consultation Now</a>
+                </section>
+            </section>
+        </article>
+    </section>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+
+            <div class="footer-column brand-info">
+                <img src="assets/images/logo_aviva (1).png" alt="Aviva Aesthetics Logo" class="footer-logo">
+                <p>Aviva Aesthetics is one of the leading aesthetic clinics in Karimnagar, offering a comprehensive range of skin, hair, and body treatments.</p>
+                <div class="social-links">
+                    <a href="https://instagram.com/dr_haripriyaavivaaesthetics" target="_blank" class="social-icon">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.facebook.com/" target="_blank" class="social-icon">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="http://youtube.com/YOUR_CHANNEL" target="_blank" class="social-icon">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-column quick-links">
+                <h4>Quick Links</h4>
+                <ul class="footer-links-list">
+                    <li><a href="#" id="home-link">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="plastic-surgery.html">Services</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                    <li><a href="#our-gallery">Gallery</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column useful-links">
+                <h4>Useful Links</h4>
+                <ul class="footer-links-list">
+                    <li><a href="#privacy">Privacy Policy</a></li>
+                    <li><a href="#terms">Terms and Conditions</a></li>
+                    <li><a href="#disclaimer">Disclaimer</a></li>
+                    <li><a href="#support">Support</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column make-appointment">
+                <h4>Make Appointment</h4>
+                <p class="clinic-hours">10 AM - 7 PM, Monday - Saturday</p>
+                <p class="clinic-hours">Sunday - Closed</p>
+
+                <div class="call-today-box">
+                    <div class="call-today-content">
+                        <div class="call-icon-wrapper">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="call-text-numbers">
+                            <p class="call-today-text">Call Us Today</p>
+                            <p class="call-today-number">(+91) 8125251010</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <hr class="footer-divider">
+
+        <div class="footer-bottom">
+            <p>© 2025 AvivaAesthetics.com. All rights reserved.</p>
+            <p>Powered by drharipriyaavivaaesthetics.com</p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/918125251010"
+        class="whatsapp-float"
+        target="_blank"
+        aria-label="Chat on WhatsApp">
+        <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp" />
+    </a>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+    <script src="/assets/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dermal Fillers - Aviva Aesthetics</title>
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Basic dropdown styling */
+        .dropdown {
+            position: relative;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #ffffff;
+            min-width: 220px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content a:hover {background-color: #ddd;}
+        .dropdown:hover .dropdown-content {display: block;}
+
+        /* Hero Section */
+        .hero-section {
+            position: relative;
+            width: 100%;
+            padding-bottom: 45.45%; /* (500 / 1100) * 100% to maintain 1100x500 aspect ratio */
+            overflow: hidden;
+            height: auto;
+        }
+
+        .hero-section img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white; /* Keep hero text white for contrast on image */
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            width: 90%;
+            background-color: rgba(0, 0, 0, 0.6); /* Black background with 60% opacity */
+            padding: 20px; /* Add some padding around the text */
+            border-radius: 8px; /* Slightly rounded corners for the background */
+            max-width: 600px; /* Limit the width of the background box */
+            box-sizing: border-box; /* Include padding in the width */
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Content Sections */
+        .content-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        /* Main H1 in content-section - SPECIFICALLY BLACK */
+        .content-section .main-content-title {
+            color: black; /* This specific H1 is now black */
+        }
+        
+        /* Other headings within content-section remain gold */
+        .content-section h2,
+        .content-section h3 {
+            color: #D4AF37; /* Gold color for H2 and H3 */
+        }
+
+        .content-section h1 { /* General style for h1, main-content-title overrides color */
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .content-section h2 {
+            font-size: 2.2rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .content-section h3 {
+            font-size: 1.8rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            text-align: left;
+        }
+
+        .content-section p {
+            color: #444;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        /* Generic list styling for content sections */
+        .content-section ul {
+            list-style: none; /* Remove default bullets */
+            padding-left: 0;
+            max-width: 800px; /* Adjust as needed */
+            margin: 2rem auto; /* Center the list */
+        }
+
+        .content-section ul li {
+            position: relative;
+            padding-left: 30px; /* Space for custom bullet */
+            margin-bottom: 10px;
+            color: #444;
+            font-size: 1.05rem;
+            line-height: 1.6;
+            text-align: left;
+        }
+
+        .content-section ul li::before {
+            content: '>'; /* Use '>' as bullet point */
+            position: absolute;
+            left: 0;
+            color: #D4AF37; /* Gold color for the bullet */
+            font-size: 1.2em;
+            top: 0; /* Align with the top of the text */
+        }
+
+        .content-section section {
+            margin-bottom: 3rem;
+        }
+
+        .author {
+            text-align: center;
+            color: #D4AF37; /* Gold color for author text */
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .introduction {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .introduction p {
+            text-align: center;
+        }
+
+        /* Book Appointment Section */
+        .book-appointment {
+            text-align: center;
+            padding: 3rem 0;
+            background-color: #f7f3ed; /* Softer, lighter background (very pale gold/cream) */
+            margin-top: 40px;
+            border-radius: 10px; /* Match other sections' border-radius */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+            max-width: 1200px; /* Align with other main content */
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .book-appointment h2 {
+            color: #D4AF37; /* Gold color for heading */
+            margin-bottom: 15px;
+            font-size: 2.2rem;
+        }
+
+        .book-appointment p {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .book-appointment-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #D4AF37; /* Gold theme color */
+            color: white; /* White text for contrast */
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border: 1px solid #c2a36c;
+        }
+
+        .book-appointment-button:hover {
+            background-color: #000000; /* Darker shade (black) on hover */
+            color: white; /* White text on hover */
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        /* WhatsApp floating button */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 100;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .whatsapp-float img {
+            width: 35px;
+            height: 35px;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .content-section {
+                padding: 3rem 1.5rem;
+            }
+
+            .content-section h1 {
+                font-size: 2.2rem;
+            }
+
+            .content-section h2 {
+                font-size: 1.8rem;
+            }
+
+            .content-section h3 {
+                font-size: 1.5rem;
+            }
+
+            .content-section p,
+            .content-section ul li {
+                font-size: 1rem;
+            }
+            .hero-section {
+                padding-bottom: 60%; /* Adjust hero height for mobile aspect ratio */
+                height: auto;
+            }
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            .hero-content {
+                width: 95%; /* Adjust width for smaller screens */
+                padding: 15px; /* Adjust padding for smaller screens */
+            }
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                right: 20px;
+            }
+            .whatsapp-float img {
+                width: 30px;
+                height: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <img src="/assets/images/logo.png" alt="Aviva Aesthetics Logo" class="logo-img" />
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#about">About</a>
+                        <div class="dropdown-content">
+                            <a href="about-dr.html">About Doctor</a>
+                        </div>
+                    </li>
+                    <li><a href="index.html#exclusives">Exclusives</a></li>
+                    <li class="dropdown">
+                        <a href="#">Services</a>
+                        <div class="dropdown-content">
+                            <a href="plastic-surgery.html">Plastic & Cosmetic Surgery</a>
+                            <a href="dermatology.html">Dermatology</a>
+                            <a href="skinandhairaesthetics.html">Skin & Hair Aesthetics</a>
+                            <a href="smile.html">Smile Clinic (Dental)</a>
+                            <a href="obesity-clinic.html">Obesity Clinic (Weight Loss)</a>
+                            <a href="cosmetic-gynecology.html">Cosmetic Gynecology</a>
+                            <a href="pediatrics.html">Pediatrics Clinic</a>
+                        </div>
+                    </li>
+                    <li><a href="index.html#vouchers">Vouchers</a></li>
+                    <li><a href="index.html#contact">Appointment</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                    <li><a href="index.html#team-section">Our Team</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero-section">
+        <img src="assets/images/dermal-fillers-hero.png" alt="Dermal Fillers Treatment" onerror="this.onerror=null;this.src='https://placehold.co/1100x500/E0D0B0/7A5A28?text=Dermal+Fillers';">
+        <div class="hero-content">
+            <h1>Dermal Fillers</h1>
+            <p>Restore Youth & Volume</p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <article class="treatment-info">
+            <h1 class="main-content-title">Restore Youth & Volume with Dermal Fillers at Aviva Aesthetics, Karimnagar</h1>
+            <h2 class="author">Non-Surgical Beauty Enhancement by Dr. Haripriya</h2>
+            
+            <div class="introduction">
+                <p>Aging, stress, and lifestyle factors can lead to sagging skin, volume loss, and tired facial features. At Aviva Aesthetics, Karimnagar, we offer advanced dermal filler treatments to help restore youthful contours, enhance facial features, and refresh your natural beauty—without surgery.</p>
+                <p>Under the expert guidance of Dr. Haripriya, our clinic provides safe, result-oriented filler treatments using globally trusted brands, tailored to Indian skin and facial structures.</p>
+            </div>
+
+            <section class="treatment-details">
+                <h2>What Are Dermal Fillers?</h2>
+                <p>Dermal fillers are soft, gel-like substances—commonly made of hyaluronic acid, a natural component of our skin—that are injected beneath the skin to restore lost volume, smooth out wrinkles, and enhance facial contours.</p>
+                <p>Unlike Botox (which relaxes muscles), fillers add volume, making them ideal for areas that appear sunken, flat, or hollow with age.</p>
+
+                <h2>Popular Areas for Filler Treatment:</h2>
+                <ul>
+                    <li>Cheeks – for fuller, lifted contours</li>
+                    <li>Under-eyes (tear trough) – to reduce dark circles and hollowness</li>
+                    <li>Lips – for natural enhancement and hydration</li>
+                    <li>Nasolabial folds – smile lines around the mouth</li>
+                    <li>Jawline & Chin – to define facial structure</li>
+                    <li>Marionette lines – from corners of mouth to chin</li>
+                </ul>
+
+                <h2>Why Choose Aviva Aesthetics?</h2>
+                <ul>
+                    <li>Performed by trained experts under Dr. Haripriya’s supervision</li>
+                    <li>Use of premium, internationally approved filler brands</li>
+                    <li>Natural-looking results with minimal pain and no downtime</li>
+                    <li>Safe for Indian skin types, with customized treatment plans</li>
+                    <li>Focus on facial balance, harmony, and enhancement—not overfilling</li>
+                </ul>
+                <p>Whether you want to restore youthful volume or simply add definition to your features, our goal is to help you look refreshed, confident, and naturally beautiful.</p>
+
+                <h2>What to Expect:</h2>
+                <ul>
+                    <li>Procedure time: 20–30 minutes</li>
+                    <li>Pain level: Minimal (topical numbing cream is used)</li>
+                    <li>Visible results: Immediately, with continued improvement over days</li>
+                    <li>Longevity: 9 to 18 months, depending on area and product used</li>
+                    <li>Downtime: None to minimal—mild swelling may last a day or two</li>
+                </ul>
+
+                <h2>Are Fillers Right for You?</h2>
+                <p>Dermal fillers are ideal for:</p>
+                <ul>
+                    <li>Men and women aged 25+ seeking facial rejuvenation</li>
+                    <li>Brides-to-be or individuals preparing for special occasions</li>
+                    <li>People who want a non-surgical, quick aesthetic enhancement</li>
+                    <li>Those concerned about early signs of aging, flat cheeks, or dull skin</li>
+                </ul>
+
+                <section class="book-appointment">
+                    <h2>Book Your Personalized Consultation Today</h2>
+                    <p>At Aviva Aesthetics, Karimnagar, your beauty and safety come first. Let Dr. Haripriya and her expert team help you bring out your best features with the power of dermal fillers—safe, subtle, and sophisticated.</p>
+                    <p>📞 Call now to schedule a consultation and begin your journey to graceful, youthful beauty.</p>
+                    <a href="index.html#contact" class="book-appointment-button">Book Your Consultation Now</a>
+                </section>
+            </section>
+        </article>
+    </section>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+
+            <div class="footer-column brand-info">
+                <img src="assets/images/logo.PNG" alt="Aviva Aesthetics Logo" class="footer-logo">
+                <p>Aviva Aesthetics is one of the leading aesthetic clinics in Karimnagar, offering a comprehensive range of skin, hair, and body treatments.</p>
+                <div class="social-links">
+                    <a href="https://instagram.com/dr_haripriyaavivaaesthetics" target="_blank" class="social-icon">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://facebook.com/YOUR_PAGE" target="_blank" class="social-icon">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="http://youtube.com/YOUR_CHANNEL" target="_blank" class="social-icon">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-column quick-links">
+                <h4>Quick Links</h4>
+                <ul class="footer-links-list">
+                    <li><a href="index.html" id="home-link">Home</a></li>
+                    <li><a href="index.html#about">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="index.html#testimonials">Testimonials</a></li>
+                    <li><a href="index.html#contact">Contact Us</a></li>
+                    <li><a href="index.html#our-gallery">Gallery</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column useful-links">
+                <h4>Useful Links</h4>
+                <ul class="footer-links-list">
+                    <li><a href="#privacy">Privacy Policy</a></li>
+                    <li><a href="#terms">Terms and Conditions</a></li>
+                    <li><a href="#disclaimer">Disclaimer</a></li>
+                    <li><a href="#support">Support</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column make-appointment">
+                <h4>Make Appointment</h4>
+                <p class="clinic-hours">10 AM - 7 PM, Monday - Saturday</p>
+                <p class="clinic-hours">Sunday - Closed</p>
+
+                <div class="call-today-box">
+                    <div class="call-today-content">
+                        <div class="call-icon-wrapper">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="call-text-numbers">
+                            <p class="call-today-text">Call Us Today</p>
+                            <p class="call-today-number">(+91) 8125251010</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <hr class="footer-divider">
+
+        <div class="footer-bottom">
+            <p>© 2025 AvivaAesthetics.com. All rights reserved.</p>
+            <p>Powered by drharipriyaavivaaesthetics.com</p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/918125251010"
+        class="whatsapp-float"
+        target="_blank"
+        aria-label="Chat on WhatsApp">
+        <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp" />
+    </a>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Script for footer home link (Copied from index.html)
+        document.getElementById('home-link').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+    <script src="/assets/js/script.js"></script>
+</body>
+</html>

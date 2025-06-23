@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Microneedling - Aviva Aesthetics</title>
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Basic dropdown styling */
+        .dropdown {
+            position: relative;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #ffffff;
+            min-width: 220px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content a:hover {background-color: #ddd;}
+        .dropdown:hover .dropdown-content {display: block;}
+
+        /* Hero Section */
+        .hero-section {
+            position: relative;
+            width: 100%;
+            padding-bottom: 45.45%; /* (500 / 1100) * 100% to maintain 1100x500 aspect ratio */
+            overflow: hidden;
+            height: auto;
+        }
+
+        .hero-section img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+
+        .hero-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white; /* Keep hero text white for contrast on image */
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            width: 90%;
+            /* ADDED STYLES FOR BACKGROUND HERE */
+            background-color: rgba(0, 0, 0, 0.6); /* Black background with 60% opacity */
+            padding: 20px; /* Add some padding around the text */
+            border-radius: 8px; /* Slightly rounded corners for the background */
+            max-width: 600px; /* Limit the width of the background box */
+            box-sizing: border-box; /* Include padding in the width */
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Content Sections */
+        .content-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        /* Main H1 in content-section - SPECIFICALLY BLACK */
+        .content-section .main-content-title {
+            color: black; /* This specific H1 is now black */
+        }
+        
+        /* Other headings within content-section remain gold */
+        .content-section h2,
+        .content-section h3 {
+            color: #D4AF37; /* Gold color for H2 and H3 */
+        }
+
+        .content-section h1 { /* General style for h1, main-content-title overrides color */
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .content-section h2 {
+            font-size: 2.2rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .content-section h3 {
+            font-size: 1.8rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            text-align: left;
+        }
+
+        .content-section p {
+            color: #444;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        .content-section ul {
+            list-style: disc;
+            margin-left: 2rem;
+            margin-bottom: 2rem;
+            color: #555;
+        }
+
+        .content-section ul li {
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+
+        .content-section section {
+            margin-bottom: 3rem;
+        }
+
+        .author {
+            text-align: center;
+            color: #D4AF37; /* Gold color for author text */
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .introduction {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .introduction p {
+            text-align: center;
+        }
+
+        /* Styling for the benefits section to make it look like "services-list" from hydrafacial.html */
+        .content-section .benefits-list {
+            list-style: none; /* Remove default bullets */
+            padding-left: 0;
+            max-width: 800px;
+            margin: 2rem auto;
+        }
+
+        .content-section .benefits-list li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 10px;
+            color: #444;
+            font-size: 1.05rem;
+            line-height: 1.6;
+            text-align: left;
+        }
+
+        .content-section .benefits-list li::before {
+            content: '>'; /* Use '>' as bullet point */
+            position: absolute;
+            left: 0;
+            color: #D4AF37; /* Gold color for the bullet */
+            font-size: 1.2em;
+            top: 0;
+        }
+        .content-section .benefits-list li strong {
+            color: #444; /* Keep strong text same color as list item text */
+        }
+
+
+        .book-appointment {
+            text-align: center;
+            padding: 3rem 0;
+        }
+
+        .book-appointment-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #D4AF37; /* Gold theme color */
+            color: white; /* White text for contrast */
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border: 1px solid #c2a36c;
+        }
+
+        .book-appointment-button:hover {
+            background-color: #000000; /* Darker shade (black) on hover */
+            color: white; /* White text on hover */
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .content-section {
+                padding: 3rem 1.5rem;
+            }
+
+            .content-section h1 {
+                font-size: 2.2rem;
+            }
+
+            .content-section h2 {
+                font-size: 1.8rem;
+            }
+
+            .content-section h3 {
+                font-size: 1.5rem;
+            }
+
+            .content-section p,
+            .content-section ul li,
+            .content-section .benefits-list li {
+                font-size: 1rem;
+            }
+            .hero-section {
+                padding-bottom: 60%;
+                height: auto;
+            }
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            .hero-content {
+                width: 95%; /* Adjust width for smaller screens */
+                padding: 15px; /* Adjust padding for smaller screens */
+            }
+            .content-section .benefits-list li {
+                padding-left: 25px;
+            }
+        }
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 100;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .whatsapp-float img {
+            width: 35px;
+            height: 35px;
+        }
+
+        @media (max-width: 768px) {
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                right: 20px;
+            }
+            .whatsapp-float img {
+                width: 30px;
+                height: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <img src="/assets/images/logo.png" alt="Aviva Aesthetics Logo" class="logo-img" />
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#about">About</a>
+                        <div class="dropdown-content">
+                            <a href="about-dr.html">About Doctor</a>
+                        </div>
+                    </li>
+                    <li><a href="index.html#exclusives">Exclusives</a></li>
+                    <li class="dropdown">
+                        <a href="#">Services</a>
+                        <div class="dropdown-content">
+                            <a href="plastic-surgery.html">Plastic & Cosmetic Surgery</a>
+                            <a href="dermatology.html">Dermatology</a>
+                            <a href="skinandhairaesthetics.html">Skin & Hair Aesthetics</a>
+                            <a href="smile.html">Smile Clinic (Dental)</a>
+                            <a href="obesity-clinic.html">Obesity Clinic (Weight Loss)</a>
+                            <a href="cosmetic-gynecology.html">Cosmetic Gynecology</a>
+                            <a href="pediatrics.html">Pediatrics Clinic</a>
+                        </div>
+                    </li>
+                    <li><a href="index.html#vouchers">Vouchers</a></li>
+                    <li><a href="index.html#contact">Appointment</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                    <li><a href="index.html#team-section">Our Team</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero-section">
+        <img src="assets/images/microneedling-hero.jpg" alt="Microneedling Treatment for Radiant Skin" onerror="this.onerror=null;this.src='https://placehold.co/1100x500/E0D0B0/7A5A28?text=Microneedling';">
+        <div class="hero-content">
+            <h1>Microneedling</h1>
+            <p>Say Hello to Radiant Skin by Dr. Haripriya</p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <article class="treatment-info">
+            <h1 class="main-content-title">Microneedling by Dr. Haripriya at Aviva Aesthetics, Karimnagar</h1>
+            <h2 class="author">By Dr. Haripriya – Aviva Aesthetics, Karimnagar</h2>
+            
+            <div class="introduction">
+                <p>Are you tired of dull, uneven skin tone, acne scars, or fine lines that just won’t fade with regular skincare? It’s time to discover microneedling – one of the most advanced skin rejuvenation treatments – now offered by Dr. Haripriya at Aviva Aesthetics, Karimnagar.</p>
+            </div>
+
+            <section class="treatment-details">
+                <h2>What is Microneedling?</h2>
+                <p>Microneedling, also known as collagen induction therapy, is a minimally invasive procedure that uses fine, medical-grade needles to create micro-injuries on the skin. These microchannels stimulate the body’s natural healing process, boosting collagen and elastin production, which results in firmer, smoother, and healthier-looking skin.</p>
+
+                <h2>Why Choose Dr. Haripriya at Aviva Aesthetics?</h2>
+                <p>Dr. Haripriya is a renowned aesthetic physician known for her precision, patient-centric approach, and commitment to natural-looking results. At Aviva Aesthetics, she brings the best of science and care to deliver safe and effective microneedling treatments customized for Indian skin types.</p>
+                <p>Here’s what sets Aviva apart:</p>
+                <ul class="benefits-list">
+                    <li><strong>Expert Hands:</strong> Dr. Haripriya is skilled in handling sensitive skin and customizing depth and technique based on your unique concerns.</li>
+                    <li><strong>Premium Serums:</strong> The procedure is often combined with growth factors, PRP (platelet-rich plasma), or hyaluronic acid to enhance results.</li>
+                    <li><strong>Safe, Sterile Setup:</strong> Highest standards of hygiene and modern equipment ensure a safe and comfortable experience.</li>
+                    <li><strong>One-on-One Consultations:</strong> No rushed appointments—only honest advice and personalized treatment plans.</li>
+                </ul>
+
+                <h2>Benefits of Microneedling</h2>
+                <ul>
+                    <li>Reduces acne scars</li>
+                    <li>Fades pigmentation and dark spots</li>
+                    <li>Improves skin texture and tone</li>
+                    <li>Minimizes fine lines and open pores</li>
+                    <li>Tights loose or crepey skin</li>
+                </ul>
+                <p>Suitable for both men and women, microneedling works wonders on Indian skin, which is often prone to pigmentation and uneven texture.</p>
+
+                <h2>What to Expect During the Procedure</h2>
+                <ul>
+                    <li><strong>Consultation:</strong> Dr. Haripriya assesses your skin concerns and suggests a tailored plan.</li>
+                    <li><strong>Preparation:</strong> A numbing cream is applied to make the procedure virtually painless.</li>
+                    <li><strong>Treatment:</strong> The microneedling pen gently creates micro-injuries, often combined with nourishing serums.</li>
+                    <li><strong>Aftercare:</strong> Slight redness is normal and subsides within a day or two. Sunscreen and gentle skincare are essential post-procedure.</li>
+                </ul>
+                <p class="final-words">Most patients begin to notice visible improvements after 2–3 sessions, with full results appearing over a few weeks as collagen regenerates.</p>
+
+                <p class="final-words">Many clients from Karimnagar, Warangal, and Hyderabad have reported glowing skin, reduced scars, and boosted self-esteem after their microneedling sessions with Dr. Haripriya. The testimonials speak volumes about her expertise and the personalized care at Aviva Aesthetics.</p>
+
+                <section class="book-appointment">
+                    <h2>Ready to Begin Your Skin Transformation?</h2>
+                    <p>Let your skin reflect your inner glow. Book your microneedling consultation with Dr. Haripriya at Aviva Aesthetics, Karimnagar today!</p>
+                    <a href="index.html#contact" class="book-appointment-button">Book Your Consultation Now</a>
+                </section>
+            </section>
+        </article>
+    </section>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+
+            <div class="footer-column brand-info">
+                <img src="assets/images/logo.PNG" alt="Aviva Aesthetics Logo" class="footer-logo">
+                <p>Aviva Aesthetics is one of the leading aesthetic clinics in Karimnagar, offering a comprehensive range of skin, hair, and body treatments.</p>
+                <div class="social-links">
+                    <a href="https://instagram.com/dr_haripriyaavivaaesthetics" target="_blank" class="social-icon">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://facebook.com/YOUR_PAGE" target="_blank" class="social-icon">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="http://youtube.com/YOUR_CHANNEL" target="_blank" class="social-icon">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-column quick-links">
+                <h4>Quick Links</h4>
+                <ul class="footer-links-list">
+                    <li><a href="index.html" id="home-link">Home</a></li>
+                    <li><a href="index.html#about">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="index.html#testimonials">Testimonials</a></li>
+                    <li><a href="index.html#contact">Contact Us</a></li>
+                    <li><a href="index.html#our-gallery">Gallery</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column useful-links">
+                <h4>Useful Links</h4>
+                <ul class="footer-links-list">
+                    <li><a href="#privacy">Privacy Policy</a></li>
+                    <li><a href="#terms">Terms and Conditions</a></li>
+                    <li><a href="#disclaimer">Disclaimer</a></li>
+                    <li><a href="#support">Support</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column make-appointment">
+                <h4>Make Appointment</h4>
+                <p class="clinic-hours">10 AM - 7 PM, Monday - Saturday</p>
+                <p class="clinic-hours">Sunday - Closed</p>
+
+                <div class="call-today-box">
+                    <div class="call-today-content">
+                        <div class="call-icon-wrapper">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="call-text-numbers">
+                            <p class="call-today-text">Call Us Today</p>
+                            <p class="call-today-number">(+91) 8125251010</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <hr class="footer-divider">
+
+        <div class="footer-bottom">
+            <p>© 2025 AvivaAesthetics.com. All rights reserved.</p>
+            <p>Powered by drharipriyaavivaaesthetics.com</p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/918125251010"
+        class="whatsapp-float"
+        target="_blank"
+        aria-label="Chat on WhatsApp">
+        <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp" />
+    </a>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Script for footer home link (Copied from index.html)
+        document.getElementById('home-link').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+    <script src="/assets/js/script.js"></script>
+</body>
+</html>
