@@ -16,14 +16,15 @@ body {
 
 /* Navigation */
 .nav-container {
-    background-color: #2F5353; /* Changed to match footer background */
-    border-bottom: 1px solid #4F7373; /* Optional: Adjusted border to match footer's divider color for consistency */
+    background-color: #2F5353;
+    border-bottom: 1px solid #4F7373;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Keeps logo left, creates space to the right for nav */
     align-items: center;
     padding: 1rem 2rem;
     position: relative;
     z-index: 1000;
+    /* Remove any 'gap' or 'justify-content: flex-end;' from here */
 }
 
 .logo {
@@ -32,22 +33,24 @@ body {
     font-weight: bold;
 }
 
-.logo-img {
+.logo-img { /* Assuming this is the element representing your logo */
     height: 80px;
     object-fit: contain;
-    background-color: white; /* This adds the white background */
-    padding: 5px; /* Optional: Adds a small white border around the logo */
-    border-radius: 5px; /* Optional: If you want slightly rounded corners for the white background */
-    /* If your logo needs to be inverted to white on dark background, uncomment this: */
-    /* filter: brightness(0) invert(1); */
+    background-color: white;
+    padding: 5px;
+    border-radius: 5px;
+    /* No margin-right: auto or absolute positioning here */
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 2rem;
-}
+    gap: 2rem; /* Space between individual nav items (About, Services, etc.) */
 
+    /* ***** THESE ARE THE KEY CHANGES TO CENTER THE NAV BLOCK AFTER THE LOGO ***** */
+    margin-left: auto; /* Pushes the nav-links block as far right as possible */
+    margin-right: auto; /* Then pulls the nav-links block back to the left, centering it in the remaining space */
+}
 .nav-links a {
     color: #FFFFFF; /* Changed to white for visibility on dark background */
     text-decoration: none;
@@ -683,7 +686,7 @@ body {
 
 .service-block img {
     width: 100%;
-    height: 200px;
+    height: 180px;
     object-fit: cover;
     border-radius: 10px 10px 0 0;
     will-change: transform;
@@ -860,7 +863,7 @@ body {
 }
 
 .gender-tab-button:hover {
-    background-color: #007bff; /* Remains blue on hover */
+    background-color: #5a3e2b; /* Changed hover to a dark brown/gold for consistency */
     color: white; /* Remains white on hover */
     box-shadow: 0 6px 12px rgba(0,0,0,0.2); /* Consistent shadow */
 }
@@ -881,16 +884,22 @@ body {
 }
 
 .gender-content {
-    display: none; /* Hidden by default */
+    /* Instead of `display: none;` and `display: block;`, use `visibility` and `position`
+       for smoother transitions when combined with `opacity` and `transform`. */
+    visibility: hidden; /* Hide by default */
+    position: absolute; /* Take out of document flow to prevent affecting layout */
     opacity: 0;
     transform: translateY(20px);
-    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out, visibility 0.5s ease-out; /* Add visibility to transition */
+    width: 100%; /* Ensure it takes full width when hidden */
 }
 
 .gender-content.active {
-    display: block; /* Show active content */
+    visibility: visible; /* Show active content */
+    position: static; /* Place back in document flow */
     opacity: 1;
     transform: translateY(0);
+    transition-delay: 0s; /* Ensure active content transition is immediate */
 }
 
 .gender-content-inner {
@@ -904,8 +913,8 @@ body {
 }
 
 .gender-image-wrapper {
-    flex: 1;
-    max-width: 100%;
+    flex: 1 1 400px; /* Flex-basis added: Image takes at least 400px before shrinking/wrapping */
+    max-width: 500px; /* Max width for image to prevent it from getting too large on very wide screens */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -913,13 +922,14 @@ body {
     overflow: hidden;
     height: auto; /* allow height to adjust based on content and max-height */
     max-height: 470px; /* Adjusted max-height for the image wrapper */
+    padding-bottom: 0; /* Remove any default padding-bottom */
 }
 
 .gender-treatment-image {
     width: 100%;
     height: auto; /* allow height to be natural */
     max-height: 470px; /* Adjusted max-height for the image itself */
-    object-fit: cover;
+    object-fit: contain; /* Changed to 'contain' to ensure full image visibility without cropping */
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     transition: filter 0.5s ease-out;
@@ -930,10 +940,9 @@ body {
     filter: brightness(0.6) grayscale(0.8); /* Dim and desaturate */
 }
 
-
 .gender-treatment-list {
-    flex: 1;
-    min-width: 300px; /* Ensure list doesn't get too narrow */
+    flex: 1 1 450px; /* Flex-basis added: List takes at least 450px before shrinking/wrapping */
+    max-width: 60%; /* Limit list width on desktop for better layout balance */
     text-align: left;
     height: auto; /* Allow height to adjust naturally */
     display: flex;
@@ -968,8 +977,36 @@ body {
     padding: 0.2rem 0; /* Reduced padding */
 }
 
-
 /* Responsive adjustments for Gender Specific Treatments */
+@media (max-width: 992px) { /* Added a tablet breakpoint for more control */
+    .gender-content-inner {
+        flex-direction: column; /* Stack image and list */
+        text-align: center;
+        gap: 2rem; /* Increase gap when stacked */
+    }
+
+    .gender-image-wrapper {
+        flex: 1 1 auto; /* Allow image wrapper to take its natural size */
+        max-width: 80%; /* Limit image width on tablet */
+    }
+
+    .gender-treatment-image {
+        max-height: 400px; /* Adjust max-height for tablet images */
+        object-fit: contain; /* Maintain 'contain' for full visibility */
+    }
+
+    .gender-treatment-list {
+        flex: 1 1 auto; /* Allow list to take its natural size */
+        max-width: 90%; /* Allow list to take more width on tablet */
+        padding: 0 1rem; /* Add horizontal padding for readability */
+    }
+
+    .treatment-category ul {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Keep multiple columns if space allows */
+    }
+}
+
+
 @media (max-width: 768px) {
     .gender-tabs {
         flex-direction: column;
@@ -980,25 +1017,26 @@ body {
         margin: 0 auto;
     }
     .gender-content-inner {
-        flex-direction: column; /* Stack image and list */
+        /* Already flex-direction: column from 992px breakpoint */
         text-align: center;
         min-height: unset;
+        gap: 1.5rem; /* Reduce gap slightly more for mobile */
     }
     .gender-image-wrapper {
-        flex: 1 1 auto;
-        height: auto; /* Allow height to adjust on smaller screens */
+        width: 95%; /* Adjust image wrapper width for mobile */
     }
     .gender-treatment-image {
-        height: auto;
-        max-height: 300px; /* Adjust max-height for mobile images */
+        max-height: 300px; /* Further adjust max-height for mobile images */
     }
     .gender-treatment-list {
         min-width: unset;
-        width: 100%;
+        width: 100%; /* List takes full width on mobile */
         height: auto;
+        padding: 0 0.5rem; /* Minimal horizontal padding */
     }
     .treatment-category ul {
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        grid-template-columns: 1fr; /* Force single column for list items on smaller phones */
+        gap: 0.8rem; /* Slight increase in gap for readability when stacked */
     }
 }
 
@@ -1016,12 +1054,10 @@ body {
     .treatment-category h3 {
         font-size: 1.3rem;
     }
-    .treatment-category ul {
-        grid-template-columns: 1fr; /* Stack list items on very small screens */
+    .gender-treatment-image {
+        max-height: 250px; /* Smallest max-height for very small screens */
     }
 }
-
-
 /* before and after section css */
 #before-after {
     padding: 30px 20px; /* Reduced top padding from 60px to 30px */
@@ -2964,3 +3000,140 @@ footer {
         right: 15px;
     }
 }
+
+
+/* Hamburger Menu (Mobile Only) */
+.hamburger-menu {
+    display: none; /* Hidden by default on desktop */
+    font-size: 2.2rem;
+    cursor: pointer;
+    color: #D4AF37; /* Gold color for the icon */
+    z-index: 1001; /* Ensure it's above other content */
+}
+
+/* Mobile Navigation (Initially Hidden) */
+.mobile-nav {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Start off-screen to the right */
+    width: 80%; /* Adjust as needed, or use max-width */
+    max-width: 300px;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: right 0.3s ease-in-out; /* Smooth slide effect */
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto; /* Enable scrolling for long menus */
+}
+
+.mobile-nav.open {
+    right: 0; /* Slide into view */
+}
+
+.mobile-nav-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 20px;
+}
+
+.logo-img-mobile {
+    height: 50px; /* Smaller logo for mobile menu */
+    width: auto;
+}
+
+.close-menu {
+    font-size: 2rem;
+    cursor: pointer;
+    color: #333;
+}
+
+.mobile-nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mobile-nav-links li {
+    margin-bottom: 15px;
+}
+
+.mobile-nav-links li a {
+    color: #333;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    display: block;
+    padding: 8px 0;
+    transition: color 0.3s ease;
+}
+
+.mobile-nav-links li a:hover {
+    color: #D4AF37;
+}
+
+/* Mobile Dropdown Specifics */
+.mobile-dropdown-arrow {
+    margin-left: 5px;
+    font-size: 0.8em;
+    vertical-align: middle;
+    transition: transform 0.3s ease;
+}
+
+.mobile-dropdown.active .mobile-dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+.mobile-dropdown-content {
+    display: none; /* Hidden by default */
+    list-style: none;
+    padding-left: 15px; /* Indent dropdown items */
+    margin-top: 10px;
+}
+
+.mobile-dropdown-content a {
+    font-weight: 400; /* Lighter font for mobile dropdown items */
+    font-size: 1rem;
+    padding: 8px 0;
+    color: #555;
+}
+
+.mobile-dropdown-content a:hover {
+    color: #D4AF37;
+}
+
+/* Overlay for Mobile Menu */
+.mobile-nav-overlay {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark semi-transparent background */
+    z-index: 999; /* Below the mobile menu, above content */
+}
+
+.mobile-nav-overlay.active {
+    display: block;
+}
+
+/* --- Media Queries for Responsiveness --- */
+@media (max-width: 992px) { /* Adjust breakpoint as needed */
+    .desktop-nav { /* You might need to change this selector if your desktop nav is just .nav-links */
+        display: none; /* Hide desktop nav on smaller screens */
+    }
+
+    .hamburger-menu {
+        display: block; /* Show hamburger icon */
+    }
+
+    /* Keep or adjust other media queries you have for other sections */
+}
+

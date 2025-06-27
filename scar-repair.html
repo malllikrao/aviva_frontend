@@ -32,18 +32,19 @@
         .hero-section {
             position: relative;
             width: 100%;
-            padding-bottom: 45.45%; /* (500 / 1100) * 100% to maintain 1100x500 aspect ratio */
+            /* Maintain aspect ratio based on a 1100x500 image */
+            padding-bottom: 45.45%; /* (500 / 1100) * 100% */
             overflow: hidden;
-            height: auto; /* Allow padding-bottom to control height */
+            height: auto; /* Ensure height is auto to respect padding-bottom */
         }
 
         .hero-section img {
-            position: absolute;
+            position: absolute; /* Essential for filling the padding-bottom container */
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain; /* Ensures the entire image is visible, like pediatrics */
         }
 
         .hero-content {
@@ -52,22 +53,20 @@
             left: 50%;
             transform: translate(-50%, -50%);
             text-align: center;
-            color: white; /* Keep hero text white for contrast on image */
+            color: white;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
             width: 90%;
-            background-color: rgba(0, 0, 0, 0.6); /* Black background with 60% opacity */
-            padding: 20px; /* Add some padding around the text */
-            border-radius: 8px; /* Slightly rounded corners for the background */
-            max-width: 600px; /* Limit the width of the background box */
-            box-sizing: border-box; /* Include padding in the width */
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 600px;
+            box-sizing: border-box;
         }
+
 
         .hero-content h1 {
             font-size: 3rem;
             margin-bottom: 1rem;
-        }
-        .hero-content p {
-            font-size: 1.5rem;
         }
 
         /* Content Sections */
@@ -77,35 +76,27 @@
             padding: 4rem 2rem;
         }
 
-        /* Main H1 in content-section - SPECIFICALLY BLACK */
-        .content-section .main-content-title {
-            color: black;
-        }
-        
-        /* Other headings within content-section remain gold */
-        .content-section h2,
-        .content-section h3 {
-            color: #D4AF37; /* Gold color for H2 and H3 */
-        }
-
-        .content-section h1 { /* General style for h1, main-content-title overrides color */
+        .content-section h1 {
             font-size: 2.8rem;
+            color: #0a0a09; /* Changed to gold */
             margin-bottom: 1.5rem;
             text-align: center;
         }
 
         .content-section h2 {
+            color: #D4AF37; /* Changed to gold */
             font-size: 2.2rem;
             margin-top: 2.5rem;
             margin-bottom: 1.5rem;
-            text-align: center;
+            text-align: center; /* Centering for h2 elements */
         }
 
         .content-section h3 {
+            color: #000000; /* Changed to gold */
             font-size: 1.8rem;
             margin-top: 2rem;
             margin-bottom: 1rem;
-            text-align: left; /* Keep H3 left-aligned as on other pages */
+            text-align: left; /* Keep h3 left-aligned as per original service pages */
         }
 
         .content-section p {
@@ -115,31 +106,17 @@
             font-size: 1.05rem;
         }
 
-        /* Custom list style (for all lists in content-section) */
-        .content-section .services-list {
-            list-style: none; /* Remove default bullets */
-            padding-left: 0;
-            max-width: 800px; /* Constrain width for better readability */
-            margin: 2rem auto; /* Center the list */
+        .content-section ul {
+            list-style: disc;
+            margin-left: 2rem;
+            margin-bottom: 2rem;
+            color: #555;
         }
 
-        .content-section .services-list li {
-            position: relative;
-            padding-left: 30px; /* Space for the custom bullet */
-            margin-bottom: 10px;
-            color: #444;
+        .content-section ul li {
+            margin-bottom: 1rem;
             font-size: 1.05rem;
             line-height: 1.6;
-            text-align: left; /* Align text left within list item */
-        }
-
-        .content-section .services-list li::before {
-            content: '>'; /* Custom bullet symbol */
-            position: absolute;
-            left: 0;
-            color: #D4AF37; /* Gold color for custom bullet */
-            font-size: 1.2em;
-            top: 0; /* Align with the top of the text */
         }
 
         .content-section section {
@@ -148,70 +125,110 @@
 
         .author {
             text-align: center;
-            color: #D4AF37; /* Gold color for author text */
+            color: #D4AF37; /* Changed to gold */
             font-size: 1.3rem;
             margin-bottom: 2.5rem;
         }
 
-        .introduction, .final-words {
+        .introduction {
             margin-bottom: 3rem;
-            text-align: center; /* Centered introduction text */
-        }
-        .introduction p, .final-words p {
-            text-align: center; /* Ensure paragraphs within introduction are centered */
-        }
-        .final-words {
-            margin-top: 4rem; /* Add some space above the final words */
+            text-align: center; /* Centering for introduction paragraph */
         }
 
-        /* Book Appointment Section */
+        .introduction p {
+            text-align: center; /* Ensuring paragraphs in introduction are centered */
+        }
+
+        /* Hair transplant specific list style with numbers */
+        .content-section .hair-transplant-list {
+            list-style: none; /* Remove default bullet */
+            padding-left: 0;
+            max-width: 800px; /* Limit width for better readability */
+            margin: 2rem auto; /* Center the list */
+            counter-reset: custom-counter; /* Initialize counter */
+        }
+
+        .content-section .hair-transplant-list li {
+            position: relative;
+            padding-left: 35px; /* Space for the number */
+            margin-bottom: 15px;
+            color: #444;
+            font-size: 1.05rem;
+            line-height: 1.6;
+            text-align: left; /* Ensure list items are left-aligned */
+        }
+
+        .content-section .hair-transplant-list li::before {
+            counter-increment: custom-counter; /* Increment counter */
+            content: counter(custom-counter) ". "; /* Display the counter */
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-weight: bold;
+            color: #7a5a28; /* Adjust number color */
+            font-size: 1.1em;
+        }
+
         .book-appointment {
             text-align: center;
             padding: 3rem 0;
-            /* Removed background, margin-top, border-radius, box-shadow for consistency */
-        }
-
-        .book-appointment h2 {
-            color: #D4AF37; /* Gold color */
-            margin-bottom: 15px;
-            font-size: 2.2rem;
-        }
-
-        .book-appointment p {
-            font-size: 1.1rem;
-            color: #666;
-            margin-bottom: 30px;
         }
 
         .book-appointment-button {
             display: inline-block;
-            padding: 15px 30px; /* Consistent padding */
-            background-color: #D4AF37; /* Gold theme color */
+            padding: 15px 30px;
+            background-color: #D4AF37; /* Applied theme color to match obesity-clinic.html */
             color: white; /* White text for contrast */
             border-radius: 8px;
             text-decoration: none;
             font-size: 1.2rem;
             font-weight: bold;
             transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            border: none; /* No border for the button */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Softer shadow */
+            border: 1px solid #c2a36c; /* Subtle border */
         }
 
         .book-appointment-button:hover {
-            background-color: #000000; /* Black on hover */
+            background-color: #000000; /* Darker shade on hover to match obesity-clinic.html */
             color: white; /* White text on hover */
             transform: translateY(-3px);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* Slightly more prominent shadow on hover */
         }
 
-        /* Horizontal rule consistency */
-        hr {
-            margin: 4rem auto;
-            width: 50%;
-            border: 0;
-            border-top: 1px solid #D4AF37; /* Gold color for the HR */
-        }
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .content-section {
+                padding: 3rem 1.5rem;
+            }
 
+            .content-section h1 {
+                font-size: 2.2rem;
+            }
+
+            .content-section h2 {
+                font-size: 1.8rem;
+            }
+
+            .content-section h3 {
+                font-size: 1.5rem;
+            }
+
+            .content-section p,
+            .content-section ul li,
+            .content-section .hair-transplant-list li {
+                font-size: 1rem;
+            }
+            .hero-section {
+                padding-bottom: 45.45%; /* Keep consistent aspect ratio for mobile too */
+                height: auto; /* Ensure height is auto to respect padding-bottom */
+            }
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            .content-section .hair-transplant-list li {
+                padding-left: 30px; /* Adjust padding for smaller screens */
+            }
+        }
         /* WhatsApp floating button */
         .whatsapp-float {
             position: fixed;
@@ -236,45 +253,7 @@
             height: 35px;
         }
 
-        /* Responsive Adjustments */
         @media (max-width: 768px) {
-            .content-section {
-                padding: 3rem 1.5rem;
-            }
-
-            .content-section h1 {
-                font-size: 2.2rem;
-            }
-
-            .content-section h2 {
-                font-size: 1.8rem;
-            }
-
-            .content-section h3 {
-                font-size: 1.5rem;
-            }
-
-            .content-section p,
-            .content-section .services-list li {
-                font-size: 1rem;
-            }
-            .hero-section {
-                padding-bottom: 60%; /* Adjusted for better mobile aspect ratio */
-                height: auto;
-            }
-            .hero-content h1 {
-                font-size: 2rem;
-            }
-            .hero-content p {
-                font-size: 1.1rem;
-            }
-            .hero-content {
-                width: 95%; /* Adjust width for smaller screens */
-                padding: 15px; /* Adjust padding for smaller screens */
-            }
-            .services-list li {
-                padding-left: 25px; /* Adjust padding for smaller screens */
-            }
             .whatsapp-float {
                 width: 50px;
                 height: 50px;
@@ -291,19 +270,17 @@
 <body>
     <header>
         <div class="nav-container">
-            <img src="/assets/images/logo.png" alt="Aviva Aesthetics Logo" class="logo-img" />
-            <nav>
+            <img src="assets/images/logo_aviva (1).png" alt="Aviva Aesthetics Logo" class="logo-img" onerror="this.onerror=null;this.src='https://placehold.co/60x60/c2a36c/FFFFFF?text=Logo';" />
+            
+            <div class="hamburger-menu" id="hamburger-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+
+            <nav class="desktop-nav">
                 <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
                     <li class="dropdown">
-                        <a href="#about">About</a>
-                        <div class="dropdown-content">
-                            <a href="about-dr.html">About Doctor</a>
-                        </div>
-                    </li>
-                    <li><a href="index.html#exclusives">Exclusives</a></li>
-                    <li class="dropdown">
-                        <a href="#">Services</a>
+                        <a href="#">Services <i class="fas fa-chevron-down dropdown-arrow"></i></a>
                         <div class="dropdown-content">
                             <a href="plastic-surgery.html">Plastic & Cosmetic Surgery</a>
                             <a href="dermatology.html">Dermatology</a>
@@ -311,17 +288,43 @@
                             <a href="smile.html">Smile Clinic (Dental)</a>
                             <a href="obesity-clinic.html">Obesity Clinic (Weight Loss)</a>
                             <a href="cosmetic-gynecology.html">Cosmetic Gynecology</a>
-                            <a href="pediatrics.html">Pediatrics Clinic</a>
-                            <a href="botox-dermal-fillers.html">Botox & Dermal Fillers</a>
+                            <a href="pediatrics.html">Pediatrics</a>
                         </div>
                     </li>
-                    <li><a href="index.html#vouchers">Vouchers</a></li>
-                    <li><a href="index.html#contact">Appointment</a></li>
-                    <li><a href="index.html#contact">Contact</a></li>
-                    <li><a href="index.html#team-section">Our Team</a></li>
+                    <li><a href="index.html#book">Appointment</a></li>
+                    <li><a href="index.html#team">Our Team</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
                 </ul>
             </nav>
         </div>
+
+        <nav class="mobile-nav" id="mobile-nav">
+            <div class="mobile-nav-header">
+                <img src="assets/images/logo_aviva (1).png" alt="Aviva Aesthetics Logo" class="logo-img-mobile" onerror="this.onerror=null;this.src='https://placehold.co/60x60/c2a36c/FFFFFF?text=Logo';" />
+                <div class="close-menu" id="close-menu">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+            <ul class="mobile-nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li class="mobile-dropdown">
+                    <a href="#">Services <i class="fas fa-chevron-down mobile-dropdown-arrow"></i></a>
+                    <div class="mobile-dropdown-content">
+                        <a href="plastic-surgery.html">Plastic & Cosmetic Surgery</a>
+                        <a href="dermatology.html">Dermatology</a>
+                        <a href="skinandhairaesthetics.html">Skin & Hair Aesthetics</a>
+                        <a href="smile.html">Smile Clinic (Dental)</a>
+                        <a href="obesity-clinic.html">Obesity Clinic (Weight Loss)</a>
+                        <a href="cosmetic-gynecology.html">Cosmetic Gynecology</a>
+                        <a href="pediatrics.html">Pediatrics</a>
+                    </div>
+                </li>
+                <li><a href="index.html#book">Appointment</a></li>
+                <li><a href="index.html#team">Our Team</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+            </ul>
+        </nav>
     </header>
 
     <section class="hero-section">
@@ -383,7 +386,7 @@
                 <section class="book-appointment">
                     <h2>Your Journey to Clearer Skin Starts Here</h2>
                     <p>Book your appointment today and discover how advanced scar revision can help you look and feel your best.</p>
-                    <a href="index.html#contact" class="book-appointment-button">Book Your Consultation Now</a>
+                    <a href="index.html#book" class="book-appointment-button">Book Your Consultation Now</a>
                 </section>
             </section>
         </article>
@@ -413,10 +416,10 @@
                 <ul class="footer-links-list">
                     <li><a href="index.html" id="home-link">Home</a></li>
                     <li><a href="index.html#about">About Us</a></li>
-                    <li><a href="services.html">Services</a></li>
+                    <li><a href="plastic-surgery.html">Services</a></li>
                     <li><a href="index.html#testimonials">Testimonials</a></li>
-                    <li><a href="index.html#contact">Contact Us</a></li>
-                    <li><a href="index.html#our-gallery">Gallery</a></li>
+                    <li><a href="index.html#book">Contact Us</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
                 </ul>
             </div>
 
@@ -442,7 +445,7 @@
                         </div>
                         <div class="call-text-numbers">
                             <p class="call-today-text">Call Us Today</p>
-                            <p class="call-today-number">(+91) 8125251010</p>
+                            <p class="call-today-number">(+91) 9129912945</p>
                         </div>
                     </div>
                 </div>
@@ -454,11 +457,11 @@
 
         <div class="footer-bottom">
             <p>© 2025 AvivaAesthetics.com. All rights reserved.</p>
-            <p>Powered by drharipriyaavivaaesthetics.com</p>
+            <p>Powered by mallikdev</p>
         </div>
     </footer>
 
-    <a href="https://wa.me/918125251010"
+    <a href="https://wa.me/919129912945"
         class="whatsapp-float"
         target="_blank"
         aria-label="Chat on WhatsApp">

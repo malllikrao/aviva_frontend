@@ -71,65 +71,27 @@ function getCookie(name) {
 }
 
 // ======================================================
-// Appointment Form Submission Logic
+// Appointment Form Submission Logic (add your form logic here if any)
 // ======================================================
-
-const appointmentForm = document.getElementById('appointmentForm');
-
-if (appointmentForm) {
-    appointmentForm.addEventListener('submit', async function (e) {
-        e.preventDefault(); // Prevent default form submission
-
-        showSpinner(); // Show spinner on submit
-
-        const formData = {
-            name: document.getElementById('full_name').value,
-            email: document.getElementById('email').value,
-            phone: document.getElementById('phone').value,
-            service: document.getElementById('service').value,
-            date: document.getElementById('date').value,
-            time: document.getElementById('time').value,
-            message: document.getElementById('message').value
-        };
-
-        try {
-            const response = await fetch('http://127.0.0.1:8000/book/', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    // Conditionally add CSRF token if needed (common for Django/Flask)
-                    'X-CSRFToken': getCookie('csrftoken') || ''
-                },
-                credentials: 'include', // Include cookies (like CSRF token) with the request
-                body: JSON.stringify(formData)
-            });
-
-            if (!response.ok) {
-                const errorData = await response.json();
-                throw new Error(errorData.error || `Server responded with status ${response.status}`);
-            }
-
-            // If backend does not return JSON for success, simply continue
-            // If it does return JSON, you might parse it: const data = await response.json();
-
-            hideSpinner();       // Hide spinner
-            showModal();         // Show success modal
-            appointmentForm.reset(); // Reset form fields
-
-        } catch (error) {
-            hideSpinner();
-            console.error('Failed to send appointment request:', error);
-            // Display a user-friendly error message
-            const errorMessageDiv = document.createElement('div');
-            errorMessageDiv.textContent = `Error: ${error.message}`;
-            errorMessageDiv.style.cssText = 'position: fixed; top: 20px; left: 50%; transform: translateX(-50%); background-color: #f44336; color: white; padding: 15px; border-radius: 5px; z-index: 10000;';
-            document.body.appendChild(errorMessageDiv);
-            setTimeout(() => errorMessageDiv.remove(), 5000); // Remove after 5 seconds
-        }
-    });
-} else {
-    console.error("Appointment form with ID 'appointmentForm' not found. Appointment functionality will not work.");
-}
+// Example:
+// const appointmentForm = document.getElementById('appointment-form');
+// if (appointmentForm) {
+//     appointmentForm.addEventListener('submit', async (e) => {
+//         e.preventDefault();
+//         showSpinner();
+//         try {
+//             // Simulate API call
+//             await new Promise(resolve => setTimeout(resolve, 2000));
+//             hideSpinner();
+//             showModal();
+//             appointmentForm.reset(); // Clear form after success
+//         } catch (error) {
+//             console.error('Form submission failed:', error);
+//             hideSpinner();
+//             // Show an error message to the user
+//         }
+//     });
+// }
 
 
 // ======================================================
@@ -138,6 +100,62 @@ if (appointmentForm) {
 // ======================================================
 
 document.addEventListener('DOMContentLoaded', () => {
+
+    // --- START MOBILE MENU LOGIC ---
+    const hamburgerMenu = document.querySelector('.hamburger-menu');
+    const mobileNav = document.querySelector('.mobile-nav');
+    const closeMenu = document.querySelector('.close-menu');
+    const mobileNavOverlay = document.querySelector('.mobile-nav-overlay');
+
+    function openMobileMenu() {
+        mobileNav.classList.add('open');
+        mobileNavOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeMobileMenu() {
+        mobileNav.classList.remove('open');
+        mobileNavOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    if (hamburgerMenu) {
+        hamburgerMenu.addEventListener('click', openMobileMenu);
+    }
+
+    if (closeMenu) {
+        closeMenu.addEventListener('click', closeMobileMenu);
+    }
+
+    if (mobileNavOverlay) {
+        mobileNavOverlay.addEventListener('click', closeMobileMenu);
+    }
+
+    const mobileDropdownToggles = document.querySelectorAll('.mobile-dropdown > a');
+
+    mobileDropdownToggles.forEach(toggleLink => {
+        toggleLink.addEventListener('click', function(event) {
+            event.preventDefault();
+            const parentLi = toggleLink.closest('li.mobile-dropdown');
+            if (parentLi) {
+                parentLi.classList.toggle('active');
+                const dropdownContent = parentLi.querySelector('.mobile-dropdown-content');
+                if (dropdownContent) {
+                    dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
+                }
+            }
+        });
+    });
+
+    const allNavLinks = document.querySelectorAll('.mobile-nav-links a:not(.mobile-dropdown > a)');
+
+    allNavLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            closeMobileMenu();
+        });
+    });
+    // --- END MOBILE MENU LOGIC ---
+
 
     // --- Intersection Observer for "About" section animations ---
     const aboutSectionContainer = document.querySelector('.about-container-new');
@@ -325,7 +343,7 @@ document.addEventListener('DOMContentLoaded', () => {
             item.addEventListener('click', (e) => {
                 // Prevent opening modal if clicking directly on an iframe (for Instagram/YouTube embeds)
                 if (e.target.tagName === 'IFRAME') {
-                    return; 
+                    return;
                 }
 
                 const type = item.getAttribute('data-type');

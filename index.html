@@ -1,6 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Canonical -->
+<link rel="canonical" href="https://theavivaclinic.com/" />
+
+<!-- OG for Facebook -->
+<meta property="og:title" content="Aviva Aesthetics - Skin, Hair, Dental & Derma Clinic" />
+<meta property="og:description" content="Expert cosmetic and medical treatments in Karimnagar. Book your skin, hair, dental, or derma consultation today." />
+<meta property="og:image" content="https://yourdomain.com/assets/images/og-image.jpg" />
+<meta property="og:url" content="https://yourdomain.com/" />
+<meta property="og:type" content="website" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Aviva Aesthetics | Karimnagar Clinic for Skin, Hair, Dental & Derma" />
+<meta name="twitter:description" content="Advanced treatments by Dr. Haripriya and her expert team." />
+<meta name="twitter:image" content="https://yourdomain.com/assets/images/og-image.jpg" />
+
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="path/to/your/style.css">
@@ -115,12 +131,15 @@
     <header>
         <div class="nav-container">
             <img src="assets/images/logo_aviva (1).png" alt="Aviva Aesthetics Logo" class="logo-img" onerror="this.onerror=null;this.src='https://placehold.co/60x60/c2a36c/FFFFFF?text=Logo';" />
-            <nav>
-                <ul class="nav-links">
+            
+            <div class="hamburger-menu" id="hamburger-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+
+            <nav class="desktop-nav"> <ul class="nav-links">
                     <li><a href="#about">About</a></li>
                     <li class="dropdown">
-                        <a href="#">Services</a>
-                        <div class="dropdown-content">
+                        <a href="#">Services <i class="fas fa-chevron-down dropdown-arrow"></i></a> <div class="dropdown-content">
                             <a href="plastic-surgery.html">Plastic & Cosmetic Surgery</a>
                             <a href="dermatology.html">Dermatology</a>
                             <a href="skinandhairaesthetics.html">Skin & Hair Aesthetics</a>
@@ -131,12 +150,38 @@
                         </div>
                     </li>
                     <li><a href="#contact">Appointment</a></li>
-                    <li><a href="#contact">Contact</a></li>
                     <li><a href="#team">Our Team</a></li>
                     <li><a href="gallery.html">Gallery</a></li>
                 </ul>
             </nav>
         </div>
+
+        <nav class="mobile-nav" id="mobile-nav">
+            <div class="mobile-nav-header">
+                <img src="assets/images/logo_aviva (1).png" alt="Aviva Aesthetics Logo" class="logo-img-mobile" onerror="this.onerror=null;this.src='https://placehold.co/60x60/c2a36c/FFFFFF?text=Logo';" />
+                <div class="close-menu" id="close-menu">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+            <ul class="mobile-nav-links">
+                <li><a href="#about">About</a></li>
+                <li class="mobile-dropdown">
+                    <a href="#">Services <i class="fas fa-chevron-down mobile-dropdown-arrow"></i></a>
+                    <div class="mobile-dropdown-content">
+                        <a href="plastic-surgery.html">Plastic & Cosmetic Surgery</a>
+                        <a href="dermatology.html">Dermatology</a>
+                        <a href="skinandhairaesthetics.html">Skin & Hair Aesthetics</a>
+                        <a href="smile.html">Smile Clinic (Dental)</a>
+                        <a href="obesity-clinic.html">Obesity Clinic (Weight Loss)</a>
+                        <a href="cosmetic-gynecology.html">Cosmetic Gynecology</a>
+                        <a href="pediatrics.html">Pediatrics</a>
+                    </div>
+                </li>
+                <li><a href="#book">Appointment</a></li>
+                <li><a href="#team">Our Team</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+            </ul>
+        </nav>
     </header>
 
     <section class="hero-section">
@@ -203,7 +248,7 @@
                         </div>
                     </div>
                 </div>
-                <a href="about-us.html" class="btn-more-info-about">More About Us</a>
+                <a href="skinandhairaesthetics.html" class="btn-more-info-about">More About Us</a>
             </div>
 
             <div class="about-right-images">
@@ -222,97 +267,97 @@
         <div class="treatments-grid-container">
 
             <div class="service-block">
-                <img src="assets/images/laser.jpg" alt="Laser Hair Removal" onerror="this.onerror=null;this.src='https://placehold.co/400x300/E0BBE4/FFFFFF?text=Laser+Hair+Removal';" />
+                <img src="assets/images/Exclusive offers/LHR.png" alt="Laser Hair Removal" onerror="this.onerror=null;this.src='https://placehold.co/400x300/E0BBE4/FFFFFF?text=Laser+Hair+Removal';" />
                 <div class="service-block-content">
                     <h3>Laser Hair Removal</h3>
                     <p>Achieve smooth, hair-free skin with advanced laser technology for permanent reduction.</p>
                     <div class="service-buttons">
-                        <a href="laser.html" class="view-services-btn">More Info</a>
-                        <a href="#contact" class="book-now-btn">Book Now</a>
+                        <a href="laser-hair-removal.html" class="view-services-btn">More Info</a>
+                        <a href="#book" class="book-now-btn">Book Now</a>
                     </div>
                 </div>
             </div>
 
             <div class="service-block">
-                <img src="assets/images/chemical-peel.jpg" alt="Chemical Peel" onerror="this.onerror=null;this.src='https://placehold.co/400x300/957DAD/FFFFFF?text=Chemical+Peel';" />
+                <img src="assets/images/Exclusive offers/Chemical Peels.png" alt="Chemical Peel" onerror="this.onerror=null;this.src='https://placehold.co/400x300/957DAD/FFFFFF?text=Chemical+Peel';" />
                 <div class="service-block-content">
                     <h3>Chemical Peel</h3>
                     <p>Exfoliate and rejuvenate your skin, improving texture, tone, and reducing imperfections.</p>
                     <div class="service-buttons">
-                        <a href="skin.html" class="view-services-btn">More Info</a>
-                        <a href="#contact" class="book-now-btn">Book Now</a>
+                        <a href="chemical-peels.html" class="view-services-btn">More Info</a>
+                        <a href="#book" class="book-now-btn">Book Now</a>
                     </div>
                 </div>
             </div>
 
             <div class="service-block">
-                <img src="assets/images/prp-gfc.jpg" alt="GFC & PRP Therapy" onerror="this.onerror=null;this.src='https://placehold.co/400x300/D291BC/FFFFFF?text=GFC+PRP+Therapy';" />
+                <img src="assets/images/Exclusive offers/GFC & PRP.png" alt="GFC & PRP Therapy" onerror="this.onerror=null;this.src='https://placehold.co/400x300/D291BC/FFFFFF?text=GFC+PRP+Therapy';" />
                 <div class="service-block-content">
                     <h3>GFC & PRP Therapy</h3>
                     <p>Innovative therapies for natural hair regrowth and skin rejuvenation using your body's own growth factors.</p>
                     <div class="service-buttons">
-                        <a href="hair.html" class="view-services-btn">More Info</a>
-                        <a href="#contact" class="book-now-btn">Book Now</a>
+                        <a href="gfc-prp-therapy.html" class="view-services-btn">More Info</a>
+                        <a href="#book" class="book-now-btn">Book Now</a>
                     </div>
                 </div>
             </div>
 
             <div class="service-block">
-                <img src="assets/images/microneedling.jpg" alt="Microneedling" onerror="this.onerror=null;this.src='https://placehold.co/400x300/E0BBE4/FFFFFF?text=Microneedling';" />
+                <img src="assets/images/Exclusive offers/microneedling.png" alt="Microneedling" onerror="this.onerror=null;this.src='https://placehold.co/400x300/E0BBE4/FFFFFF?text=Microneedling';" />
                 <div class="service-block-content">
                     <h3>Microneedling</h3>
                     <p>Stimulate collagen production for improved skin texture, reduced scars, and overall rejuvenation.</p>
                     <div class="service-buttons">
-                        <a href="skin.html" class="view-services-btn">More Info</a>
-                        <a href="#contact" class="book-now-btn">Book Now</a>
+                        <a href="microneedling.html" class="view-services-btn">More Info</a>
+                        <a href="#book" class="book-now-btn">Book Now</a>
                     </div>
                 </div>
             </div>
 
             <div class="service-block">
-                <img src="assets/images/facial-treatments.jpg" alt="Facial Treatments" onerror="this.onerror=null;this.src='https://placehold.co/400x300/957DAD/FFFFFF?text=Facial+Treatments';" />
+                <img src="assets/images/Exclusive offers/hydrafacial.png" alt="Facial Treatments" onerror="this.onerror=null;this.src='https://placehold.co/400x300/957DAD/FFFFFF?text=Facial+Treatments';" />
                 <div class="service-block-content">
                     <h3>Facial Treatments</h3>
                     <p>Including Hydrafacials, Oxygen Facials, and more for deep cleansing, hydration, and glow.</p>
                     <div class="service-buttons">
-                        <a href="skin.html" class="view-services-btn">More Info</a>
-                        <a href="#contact" class="book-now-btn">Book Now</a>
+                        <a href="hydra-facial.html" class="view-services-btn">More Info</a>
+                        <a href="#book" class="book-now-btn">Book Now</a>
                     </div>
                 </div>
             </div>
 
             <div class="service-block">
-                <img src="assets/images/botox.jpg" alt="Botox Injections" onerror="this.onerror=null;this.src='https://placehold.co/400x300/D291BC/FFFFFF?text=Botox+Injections';" />
+                <img src="assets/images/Exclusive offers/BOTOX.png" alt="Botox Injections" onerror="this.onerror=null;this.src='https://placehold.co/400x300/D291BC/FFFFFF?text=Botox+Injections';" />
                 <div class="service-block-content">
                     <h3>Botox Injections</h3>
                     <p>Reduce fine lines and wrinkles for a smoother, more youthful appearance.</p>
                     <div class="service-buttons">
-                        <a href="plastic-surgery.html" class="view-services-btn">More Info</a>
-                        <a href="#contact" class="book-now-btn">Book Now</a>
+                        <a href="botoxandfillers.html" class="view-services-btn">More Info</a>
+                        <a href="#book" class="book-now-btn">Book Now</a>
                     </div>
                 </div>
             </div>
 
             <div class="service-block">
-                <img src="assets/images/smile-enhancement.jpg" alt="Smile Enhancement" onerror="this.onerror=null;this.src='https://placehold.co/400x300/E0BBE4/FFFFFF?text=Smile+Enhancement';" />
+                <img src="assets/images/Exclusive offers/" alt="Smile Enhancement" onerror="this.onerror=null;this.src='https://placehold.co/400x300/E0BBE4/FFFFFF?text=Smile+Enhancement';" />
                 <div class="service-block-content">
                     <h3>Smile Enhancement</h3>
                     <p>Cosmetic dental procedures including teeth whitening, veneers, and gum reshaping for a confident smile.</p>
                     <div class="service-buttons">
                         <a href="smile.html" class="view-services-btn">More Info</a>
-                        <a href="#contact" class="book-now-btn">Book Now</a>
+                        <a href="#book" class="book-now-btn">Book Now</a>
                     </div>
                 </div>
             </div>
 
             <div class="service-block">
-                <img src="assets/images/weight-loss-clinic.jpg" alt="Obesity Clinic (Weight Loss)" onerror="this.onerror=null;this.src='https://placehold.co/400x300/957DAD/FFFFFF?text=Weight+Loss+Clinic';" />
+                <img src="assets/images/Exclusive offers/OBESITY.png" alt="Obesity Clinic (Weight Loss)" onerror="this.onerror=null;this.src='https://placehold.co/400x300/957DAD/FFFFFF?text=Weight+Loss+Clinic';" />
                 <div class="service-block-content">
                     <h3>Obesity Clinic</h3>
                     <p>Comprehensive weight loss programs tailored to your needs for a healthier, happier you.</p>
                     <div class="service-buttons">
-                        <a href="obesity-clinic.html" class="view-services-btn">More Info</a>
-                        <a href="#contact" class="book-now-btn">Book Now</a>
+                        <a href="ob.html" class="view-services-btn">More Info</a>
+                        <a href="#book" class="book-now-btn">Book Now</a>
                     </div>
                 </div>
             </div>
@@ -331,7 +376,7 @@
             <div id="for-him-content" class="gender-content active">
                 <div class="gender-content-inner">
                     <div class="gender-image-wrapper">
-                        <img src="assets/images/forhim1.JPG" alt="Treatments for Him" class="gender-treatment-image highlightable-image" data-gender="for-him" onerror="this.onerror=null;this.src='https://placehold.co/400x500/E0BBE4/FFFFFF?text=Image+for+Him';" />
+                        <img src="assets/images/MEN.png" alt="Treatments for Him" class="gender-treatment-image highlightable-image" data-gender="for-him" onerror="this.onerror=null;this.src='https://placehold.co/400x500/E0BBE4/FFFFFF?text=Image+for+Him';" />
                     </div>
                     <div class="gender-treatment-list">
                         <div class="treatment-category">
@@ -501,7 +546,7 @@
     </div>
     
     <div class="know-more-container">
-        <a href="gallery.html" class="know-more-btn">View  More</a>
+        <a href="gallery.html" class="know-more-btn">View  More</a>
     </div>
 </section>
     <script>
@@ -541,7 +586,7 @@
             <div class="team-member" style="background-color: #fce4ec;"> <img src="dr-jagtap.jpg" alt="Dr. Jagtap">
                 <div class="team-info">
                     <h3>Dr.Haripriya </h3>
-                    <p class="role">Director, Dr.Haripriya Aviva Aesthetics</p>
+                    <p class="role">Director, Dr.Haripriya Aviva Aesthetics </p>
                 </div>
             </div>
             <div class="team-member" style="background-color: #e0f7fa;"> <img src="dr-roy.jpg" alt="Dr. Roy">
@@ -552,8 +597,8 @@
             </div>
             <div class="team-member" style="background-color: #fffde7;"> <img src="dr-jain.jpg" alt="Dr. Jain">
                 <div class="team-info">
-                    <h3>Dr. Samba</h3>
-                    <p class="role">General Physician</p>
+                    <h3>Dr. Sambaraju</h3>
+                    <p class="role">Consultant Dermatologist</p>
                 </div>
             </div>
             <div class="team-member" style="background-color: #e8f5e9;"> <img src="dr-sharma.jpg" alt="Dr. Sharma"> <div class="team-info">
@@ -601,7 +646,7 @@
     <section id="contact" class="contact-section">
         <div class="contact-box">
             <h3>Get In Touch</h3>
-            <p><strong>Phone:</strong> +91 8125251010</p>
+            <p><strong>Phone:</strong> +91 9129912945</p>
             <p><small>9am - 6pm</small></p>
             <p><strong>Email:</strong> info@aviva-aesthetics.com</p>
             <p><small>We’ll respond within 4-5 hours</small></p>
@@ -620,28 +665,92 @@
             <p><strong>Sunday:</strong> Closed</p>
         </div>
 
-        <div class="appointment-box">
-            <h3>Book Your Appointment</h3>
-            <form id="appointmentForm" action="http://127.0.0.1:8000/book/" method="POST">
-                <input type="text" placeholder="Full Name" name="name" id="full_name" required>
-                <input type="email" placeholder="Email Address" name="email" id="email" required>
-                <input type="tel" placeholder="Phone Number" name="phone" id="phone" required>
-                <select name="service" id="service" required>
-                    <option value="">Select a service</option>
-                    <option>Plastic & Cosmetic Surgery</option>
-                    <option>Dermatology</option>
-                    <option>Skin & Hair Aesthetics</option>
-                    <option>Smile Clinic (Dental)</option>
-                    <option>Obesity Clinic (Weight Loss)</option>
-                    <option>Cosmetic Gynecology</option>
-                    <option>Pediatrics</option>
-                </select>
-                <input type="date" name="date" id="date" required>
-                <input type="time" name="time" id="time" required>
-                <textarea rows="4" placeholder="Please share any specific concerns or questions you have" name="message" id="message"></textarea>
-                <button type="submit">Request Appointment</button>
-            </form>
-        </div>
+        <div id="book" class="appointment-box">
+        <h3>Book Your Appointment</h3>
+        <!-- The action attribute is removed as JavaScript will handle the submission -->
+        <form id="appointmentForm" method="POST">
+            <input type="text" placeholder="Full Name" name="name" id="full_name" required>
+            <input type="email" placeholder="Email Address" name="email" id="email" required>
+            <input type="tel" placeholder="Phone Number" name="phone" id="phone" required>
+            <select name="service" id="service" required>
+                <option value="">Select a service</option>
+                <option>Plastic & Cosmetic Surgery</option>
+                <option>Dermatology</option>
+                <option>Skin & Hair Aesthetics</option>
+                <option>Smile Clinic (Dental)</option>
+                <option>Obesity Clinic (Weight Loss)</option>
+                <option>Cosmetic Gynecology</option>
+                <option>Pediatrics</option>
+            </select>
+            <input type="date" name="date" id="date" required>
+            <input type="time" name="time" id="time" required>
+            <textarea rows="4" placeholder="Please share any specific concerns or questions you have" name="message" id="message"></textarea>
+            <button type="submit">Request Appointment</button>
+        </form>
+        <!-- Message display area added for user feedback -->
+        <div id="messageArea" style="margin-top: 15px; padding: 10px; border-radius: 5px; display: none;"></div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const appointmentForm = document.getElementById('appointmentForm');
+            const messageArea = document.getElementById('messageArea');
+
+            // Your Make.com Webhook URL
+            const MAKE_WEBHOOK_URL = 'https://hook.eu2.make.com/8ztjx49ubah3kjwh4os72fjah1eh5isv'; 
+
+            appointmentForm.addEventListener('submit', async (event) => {
+                event.preventDefault(); // Prevent default form submission to 127.0.0.1:8000
+
+                // Clear and hide previous messages
+                messageArea.style.display = 'none';
+                messageArea.textContent = '';
+                messageArea.style.backgroundColor = '';
+                messageArea.style.color = '';
+                
+                // Show a loading message
+                messageArea.textContent = 'Submitting your appointment...';
+                messageArea.style.backgroundColor = '#e0f2fe'; // Light blue
+                messageArea.style.color = '#0288d1'; // Darker blue
+                messageArea.style.display = 'block';
+
+                const formData = new FormData(appointmentForm);
+                const data = {};
+                for (const [key, value] of formData.entries()) {
+                    data[key] = value;
+                }
+
+                try {
+                    const response = await fetch(MAKE_WEBHOOK_URL, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json', // Send as JSON to Make.com webhook
+                        },
+                        body: JSON.stringify(data),
+                    });
+
+                    if (response.ok) {
+                        // Make.com webhook returns a simple 'Accepted' or similar on success
+                        messageArea.textContent = 'Appointment booked successfully! You will receive a confirmation email shortly.';
+                        messageArea.style.backgroundColor = '#e8f5e9'; // Light green
+                        messageArea.style.color = '#2e7d32'; // Dark green
+                        appointmentForm.reset(); // Clear the form
+                    } else {
+                        const errorText = await response.text();
+                        console.error('Error submitting form to Make.com:', response.status, errorText);
+                        messageArea.textContent = `Failed to book appointment. Please try again. (Error: ${response.status} - ${errorText})`;
+                        messageArea.style.backgroundColor = '#ffe0b2'; // Light orange/red
+                        messageArea.style.color = '#d32f2f'; // Red
+                    }
+                } catch (error) {
+                    console.error('Network error or unexpected issue during fetch:', error);
+                    messageArea.textContent = 'An unexpected error occurred. Please check your internet connection and try again.';
+                    messageArea.style.backgroundColor = '#ffe0b2'; // Light orange/red
+                    messageArea.style.color = '#d32f2f'; // Red
+                }
+            });
+        });
+    </script>
 
     </section>
 
@@ -661,7 +770,7 @@
     <section id="map" class="map-section">
         <h2 class="section-title">Find Us On The Map</h2>
         <div class="map-container">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3784.880664257529!2d79.12473497423544!3d18.443726671518867!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bccd9d22ce0a7d9%3A0x20f8b528ba87129a!2sDr%20Haripriya%20Aviva%20Aesthetics!5e0!3m2!1sen!2sin!4v1750687736427!5m2!1sen!2sin" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3784.880664257529!2d79.12473497423544!3d18.443726671518867!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bccd9d22ce0a7d9%3A0x20f8b528ba87129a!2sDr%20Haripriya%20Aviva%20Aesthetics!5e0!3m2!1sen!2sin!4v1750844711770!5m2!1sen!2sin" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             <p class="map-link">
                 <a href="https://goo.gl/maps/vkN8GExLtqP2" target="_blank">Open in Google Maps</a>
             </p>
@@ -694,8 +803,8 @@
                     <li><a href="#about">About Us</a></li>
                     <li><a href="plastic-surgery.html">Services</a></li>
                     <li><a href="#testimonials">Testimonials</a></li>
-                    <li><a href="#contact">Contact Us</a></li>
-                    <li><a href="#our-gallery">Gallery</a></li>
+                    <li><a href="#book">Contact Us</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
                 </ul>
             </div>
 
@@ -721,7 +830,7 @@
                         </div>
                         <div class="call-text-numbers">
                             <p class="call-today-text">Call Us Today</p>
-                            <p class="call-today-number">(+91) 8125251010</p>
+                            <p class="call-today-number">(+91) 9129912945</p>
                         </div>
                     </div>
                 </div>
@@ -733,10 +842,10 @@
 
         <div class="footer-bottom">
             <p>© 2025 AvivaAesthetics.com. All rights reserved.</p>
-            <p>Powered by drharipriyaavivaaesthetics.com</p>
+            <p>Powered by mallikdev </p>
         </div>
     </footer>
-    <a href="https://wa.me/918125251010"
+    <a href="https://wa.me/919129912945"
         class="whatsapp-float"
         target="_blank"
         aria-label="Chat on WhatsApp">
@@ -906,6 +1015,7 @@
         console.warn("One or more video modal elements (videoModal, openVideoModalBtn, closeVideoModalBtn, heroVideoPlayer) not found. Video modal functionality will not work.");
     }
 </script>
+
 
 <script src="assets/js/script.js"></script>
 </body>

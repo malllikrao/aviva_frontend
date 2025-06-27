@@ -458,38 +458,60 @@
 <body>
     <header>
         <div class="nav-container">
-            <img src="assets/images/logo.png" alt="Aviva Aesthetics Logo" class="logo-img service-logo" />
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
+            <img src="assets/images/logo_aviva (1).png" alt="Aviva Aesthetics Logo" class="logo-img" onerror="this.onerror=null;this.src='https://placehold.co/60x60/c2a36c/FFFFFF?text=Logo';" />
+            
+            <div class="hamburger-menu" id="hamburger-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+
+            <nav class="desktop-nav"> <ul class="nav-links">
+                    <li><a href="index.html#about">About</a></li>
                     <li class="dropdown">
-                        <a href="#about">About</a>
-                        <div class="dropdown-content">
-                            <a href="about-dr.html">About Doctor</a>
-                        </div>
-                    </li>
-                    <li><a href="index.html#exclusives">Exclusives</a></li>
-                    <li class="dropdown">
-                        <a href="#">Services</a>
-                        <div class="dropdown-content">
+                        <a href="#">Services <i class="fas fa-chevron-down dropdown-arrow"></i></a> <div class="dropdown-content">
                             <a href="plastic-surgery.html">Plastic & Cosmetic Surgery</a>
                             <a href="dermatology.html">Dermatology</a>
                             <a href="skinandhairaesthetics.html">Skin & Hair Aesthetics</a>
                             <a href="smile.html">Smile Clinic (Dental)</a>
                             <a href="obesity-clinic.html">Obesity Clinic (Weight Loss)</a>
                             <a href="cosmetic-gynecology.html">Cosmetic Gynecology</a>
-                            <a href="pediatrics.html">Pediatrics Clinic</a>
+                            <a href="pediatrics.html">Pediatrics</a>
                         </div>
                     </li>
-                    <li><a href="index.html#vouchers">Vouchers</a></li>
-                    <li><a href="index.html#contact">Appointment</a></li>
-                    <li><a href="index.html#contact">Contact</a></li>
-                    <li><a href="index.html#team-section">Our Team</a></li>
+                    <li><a href="index.html#book">Appointment</a></li>
+                    <li><a href="index.html#team">Our Team</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
                 </ul>
             </nav>
         </div>
-    </header>
 
+        <nav class="mobile-nav" id="mobile-nav">
+            <div class="mobile-nav-header">
+                <img src="assets/images/logo_aviva (1).png" alt="Aviva Aesthetics Logo" class="logo-img-mobile" onerror="this.onerror=null;this.src='https://placehold.co/60x60/c2a36c/FFFFFF?text=Logo';" />
+                <div class="close-menu" id="close-menu">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+            <ul class="mobile-nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li class="mobile-dropdown">
+                    <a href="#">Services <i class="fas fa-chevron-down mobile-dropdown-arrow"></i></a>
+                    <div class="mobile-dropdown-content">
+                        <a href="plastic-surgery.html">Plastic & Cosmetic Surgery</a>
+                        <a href="dermatology.html">Dermatology</a>
+                        <a href="skinandhairaesthetics.html">Skin & Hair Aesthetics</a>
+                        <a href="smile.html">Smile Clinic (Dental)</a>
+                        <a href="obesity-clinic.html">Obesity Clinic (Weight Loss)</a>
+                        <a href="cosmetic-gynecology.html">Cosmetic Gynecology</a>
+                        <a href="pediatrics.html">Pediatrics</a>
+                    </div>
+                </li>
+                <li><a href="index.html#book">Appointment</a></li>
+                <li><a href="index.html#team">Our Team</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
     <main class="service-detail-page">
         <h1 class="main-heading">Dermatology Services</h1>
 
@@ -599,10 +621,22 @@
                 <div class="doctor-treatment-card">
                     <img src="assets/images/Dandruff.png" alt="Dandruff & Urticaria">
                     <div class="doctor-treatment-card-content">
-                        <h3>Dandruff & Urticaria</h3>
+                        <h3>Dandruff </h3>
                         <p>Solutions for scalp conditions and allergic reactions, providing relief from itching and irritation.</p>
                         <div class="treatment-buttons">
                             <a href="dandruff-urticaria.html" class="more-info-btn">More Info</a>
+                            <a href="index.html#contact" class="book-now-btn">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="doctor-treatment-card">
+                    <img src="assets/images/urtacia1.png" alt="Dandruff & Urticaria">
+                    <div class="doctor-treatment-card-content">
+                        <h3>Urticaria</h3>
+                        <p>Urticaria is a skin reaction that causes raised, red, itchy rashes.</p>
+                        <div class="treatment-buttons">
+                            <a href="urticiria.html" class="more-info-btn">More Info</a>
                             <a href="index.html#contact" class="book-now-btn">Book Now</a>
                         </div>
                     </div>
@@ -657,12 +691,12 @@
                 </div>
 
                 <div class="doctor-treatment-card">
-                    <img src="assets/images/.jpg" alt="Herpes Infections Treatment">
+                    <img src="assets/images/Herpes.png" alt="Herpes Infections Treatment">
                     <div class="doctor-treatment-card-content">
                         <h3>Herpes Infections Treatment</h3>
                         <p>Management and antiviral treatments for herpes simplex virus (HSV) and herpes zoster (shingles) infections.</p>
                         <div class="treatment-buttons">
-                            <a href="herpes-infections.html" class="more-info-btn">More Info</a>
+                            <a href="herpes.html" class="more-info-btn">More Info</a>
                             <a href="index.html#contact" class="book-now-btn">Book Now</a>
                         </div>
                     </div>
@@ -674,7 +708,7 @@
             <h2 class="section-title">Ready to Address Your Skin Concerns?</h2>
             <p>Schedule a personalized consultation with Dr. Samba Raju Vallala today.</p>
             <div class="book-appointment-button-container">
-                <a href="index.html#contact" class="book-appointment-button">Book Your Appointment Now</a>
+                <a href="index.html#book" class="book-appointment-button">Book Your Appointment Now</a>
             </div>
         </section>
 
@@ -711,12 +745,12 @@
                 <ul class="footer-links-list">
                     <li><a href="index.html" id="home-link">Home</a></li>
                     <li><a href="index.html#about">About Us</a></li>
-                    <li><a href="services.html">Services</a></li>
+                    <li><a href="plastic-surgery.html">Services</a></li>
                     <li><a href="index.html#testimonials">Testimonials</a></li>
-                    <li><a href="index.html#contact">Contact Us</a></li>
+                    <li><a href="index.html#book">Contact Us</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
                 </ul>
             </div>
-
             <div class="footer-column useful-links">
                 <h4>Useful Links</h4>
                 <ul class="footer-links-list">
@@ -739,7 +773,7 @@
                         </div>
                         <div class="call-text-numbers">
                             <p class="call-today-text">Call Us Today</p>
-                            <p class="call-today-number">(+91) 8125251010</p>
+                            <p class="call-today-number">(+91) 9129912945</p>
                         </div>
                     </div>
                 </div>
@@ -751,15 +785,15 @@
 
         <div class="footer-bottom">
             <p>© 2025 AvivaAesthetics.com. All rights reserved.</p>
-            <p>Powered by drharipriyaavivaaesthetics.com</p>
+            <p>Powered by mallikdev</p>
         </div>
     </footer>
-    <a href="https://wa.me/918125251010"
+    <a href="https://wa.me/919129912945"
         class="whatsapp-float"
         target="_blank"
         aria-label="Chat on WhatsApp">
         <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp" />
     </a>
-    <script src="assets/js/scripts.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
